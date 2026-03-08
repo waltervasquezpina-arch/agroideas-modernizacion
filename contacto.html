@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - AGROIDEAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-900 overflow-x-hidden">
+
+    <!-- Global Header (Injected via components.js) -->
+    <header></header>
+
+    <main class="pt-32 pb-20">
+        <!-- Hero Section -->
+        <section class="relative py-16 bg-gradient-to-br from-slate-900 to-blue-900 text-white overflow-hidden mb-12 shadow-2xl">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="flex items-center space-x-2 text-slate-400 text-sm mb-6 uppercase tracking-widest font-bold">
+                    <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <span>Canales de Atención</span>
+                </nav>
+                <div class="max-w-3xl" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+                        Estamos para <span class="text-blue-500">Escucharte</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 leading-relaxed shadow-sm">
+                        ¿Tienes dudas sobre nuestros incentivos o procesos? Nuestro equipo técnico está listo para brindarte el soporte necesario para impulsar tu negocio agrario.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                
+                <!-- Contact Information and Support -->
+                <div class="lg:col-span-1 space-y-8">
+                    <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100" data-aos="fade-up">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Información de Contacto</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 group">
+                                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                    <i data-lucide="phone" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-bold text-slate-900">Central Telefónica</h5>
+                                    <p class="text-sm text-slate-500">(01) 414-3000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 group">
+                                <div class="w-12 h-12 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:text-white transition-all">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-bold text-slate-900">Correo Institucional</h5>
+                                    <p class="text-sm text-slate-500 text-balance">contacto@agroideas.gob.pe</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 group">
+                                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-amber-600 group-hover:text-white transition-all">
+                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-bold text-slate-900">Sede Central</h5>
+                                    <p class="text-sm text-slate-500">Av. Benavides 2188, Miraflores, Lima.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Support Card -->
+                    <div class="bg-blue-600 rounded-[2.5rem] p-8 text-white relative overflow-hidden group shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                        <h4 class="text-xl font-bold mb-4 relative z-10">Mesa de Partes Virtual</h4>
+                        <p class="text-blue-100 text-sm mb-6 relative z-10 font-light">Presenta tus documentos y solicitudes de manera 100% digital sin salir de tu región.</p>
+                        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-xl font-bold text-sm hover:shadow-lg transition-all relative z-10">
+                            Ingresar ahora
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100" data-aos="fade-up">
+                        <h2 class="text-2xl font-extrabold text-slate-900 mb-8">Envíanos un Mensaje</h2>
+                        
+                        <form action="#" method="POST" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="nombre" class="text-xs font-bold text-slate-400 uppercase ml-1">Nombre Completo</label>
+                                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez" 
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="email" class="text-xs font-bold text-slate-400 uppercase ml-1">Correo Electrónico</label>
+                                    <input type="email" id="email" name="email" required placeholder="juan@ejemplo.com"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="telefono" class="text-xs font-bold text-slate-400 uppercase ml-1">Teléfono / WhatsApp</label>
+                                    <input type="tel" id="telefono" name="telefono" placeholder="+51 900 000 000"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="asunto" class="text-xs font-bold text-slate-400 uppercase ml-1">Asunto</label>
+                                    <select id="asunto" name="asunto" class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium appearance-none">
+                                        <option value="consulta">Consulta General</option>
+                                        <option value="soporte">Soporte Técnico</option>
+                                        <option value="planes">Incentivos / Planes de Negocio</option>
+                                        <option value="otros">Otros</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="mensaje" class="text-xs font-bold text-slate-400 uppercase ml-1">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Déjanos tus comentarios aquí..."
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-medium resize-none"></textarea>
+                            </div>
+
+                            <div class="pt-4">
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-200 transition-all flex items-center justify-center gap-2 group">
+                                    <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                                    Enviar Mensaje
+                                </button>
+                                <p class="text-[10px] text-slate-400 mt-4 text-center">Al enviar el formulario, aceptas nuestra política de tratamiento de datos personales.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>

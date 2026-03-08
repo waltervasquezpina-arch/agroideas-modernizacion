@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones - AGROIDEAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-900 overflow-x-hidden">
+
+    <!-- Global Header -->
+    <header></header>
+
+    <main class="pt-32 pb-20">
+        <!-- Hero Section -->
+        <section class="relative py-16 bg-gradient-to-tr from-blue-700 to-green-600 text-white overflow-hidden mb-12">
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <nav class="flex items-center space-x-2 text-blue-100/70 text-sm mb-6 uppercase tracking-widest font-bold">
+                    <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <span>Centro de Conocimiento</span>
+                </nav>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+                    Nuestras <span class="text-yellow-300 italic">Publicaciones</span>
+                </h1>
+                <p class="text-lg text-blue-50 leading-relaxed max-w-2xl font-light">
+                    Difusión de investigaciones, guías metodológicas y reportes de impacto que fortalecen la competitividad agraria nacional.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search and Filter (Static Representative) -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-200 flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="relative w-full md:w-96">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"></i>
+                    <input type="text" placeholder="Buscar publicación..." class="w-full pl-12 pr-4 py-3 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-500 transition-all outline-none text-sm">
+                </div>
+                <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+                    <button class="px-5 py-2.5 bg-blue-600 text-white rounded-xl text-xs font-bold whitespace-nowrap">Todos</button>
+                    <button class="px-5 py-2.5 bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold whitespace-nowrap transition-colors">Guías</button>
+                    <button class="px-5 py-2.5 bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold whitespace-nowrap transition-colors">Reportes</button>
+                    <button class="px-5 py-2.5 bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold whitespace-nowrap transition-colors">Libros</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publications Grid -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Publication 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all group" data-aos="fade-up">
+                    <div class="aspect-[3/4] bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544911845-1f34a3eb46b1?q=80&w=2070&auto=format&fit=crop" alt="Cover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-lg uppercase">Reporte Anual</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-slate-900 mb-2 leading-tight group-hover:text-blue-600 transition-colors">Impacto Social 2024</h4>
+                        <p class="text-xs text-slate-500 mb-6 line-clamp-2">Análisis detallado de la mejora de ingresos en los planes de negocio agropecuarios.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Enero 2025</span>
+                            <button class="text-blue-600 hover:bg-blue-50 p-2 rounded-xl transition-colors"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-[3/4] bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop" alt="Cover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="px-3 py-1 bg-green-600 text-white text-[10px] font-bold rounded-lg uppercase">Guía Práctica</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-slate-900 mb-2 leading-tight group-hover:text-blue-600 transition-colors">Cadenas de Valor</h4>
+                        <p class="text-xs text-slate-500 mb-6 line-clamp-2">Metodología para la identificación de cuellos de botella en la producción agraria.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Diciembre 2024</span>
+                            <button class="text-blue-600 hover:bg-blue-50 p-2 rounded-xl transition-colors"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Publication 3 -->
+                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-[3/4] bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=1974&auto=format&fit=crop" alt="Cover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="px-3 py-1 bg-red-600 text-white text-[10px] font-bold rounded-lg uppercase">Compendio</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-slate-900 mb-2 leading-tight group-hover:text-blue-600 transition-colors">Normativa 2025</h4>
+                        <p class="text-xs text-slate-500 mb-6 line-clamp-2">Compilación actualizada de leyes y reglamentos de la modernización estatal.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Octubre 2024</span>
+                            <button class="text-blue-600 hover:bg-blue-50 p-2 rounded-xl transition-colors"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-[3/4] bg-slate-200 relative overflow-hidden text-center flex items-center justify-center p-8 bg-slate-100">
+                        <div class="text-slate-400 space-y-4">
+                            <i data-lucide="plus-circle" class="w-12 h-12 mx-auto opacity-20"></i>
+                            <p class="text-xs font-bold uppercase tracking-widest leading-relaxed">Próximas<br>Publicaciones</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="h-4 w-3/4 bg-slate-100 rounded-full mb-4"></div>
+                        <div class="h-3 w-1/2 bg-slate-50 rounded-full mb-8"></div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-[10px] text-slate-300 font-bold">CARGANDO...</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>

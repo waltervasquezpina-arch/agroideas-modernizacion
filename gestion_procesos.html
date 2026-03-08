@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión por Procesos - AGROIDEAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-900 overflow-x-hidden">
+
+    <!-- Global Header (Injected via components.js) -->
+    <header></header>
+
+    <main class="pt-32 pb-20">
+        <!-- Hero Section for the Page -->
+        <section class="relative py-16 bg-gradient-to-br from-green-900 to-teal-900 text-white overflow-hidden mb-12 border-b-4 border-green-500">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-green-500/20 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="max-w-2xl" data-aos="fade-right">
+                        <nav class="flex items-center space-x-2 text-green-200/80 text-sm mb-6 uppercase tracking-widest font-bold">
+                            <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            <span>Ejes de Gestión</span>
+                        </nav>
+                        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                            Gestión por <span class="text-green-400">Procesos</span>
+                        </h1>
+                        <p class="text-lg text-green-100 leading-relaxed mb-8">
+                            Optimizamos nuestra cadena de valor para entregar bienes y servicios públicos de calidad que impacten positivamente en la vida del ciudadano.
+                        </p>
+                    </div>
+                    <div class="hidden md:block" data-aos="zoom-in">
+                        <div class="w-24 h-24 bg-white/10 backdrop-blur-xl rounded-3xl flex items-center justify-center text-white border border-white/20 shadow-2xl">
+                            <i data-lucide="settings-2" class="w-12 h-12"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Sidebar / Navigation -->
+                <aside class="lg:w-1/4 space-y-6">
+                    <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sticky top-28" data-aos="fade-up">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">En esta página</h3>
+                        <nav class="space-y-1">
+                            <a href="#definition" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-green-50 text-slate-600 hover:text-green-700 transition-all group">
+                                <i data-lucide="info" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Definición</span>
+                            </a>
+                            <a href="#purpose" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-green-50 text-slate-600 hover:text-green-700 transition-all group">
+                                <i data-lucide="target" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Finalidad</span>
+                            </a>
+                            <a href="#phases" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-green-50 text-slate-600 hover:text-green-700 transition-all group">
+                                <i data-lucide="layers" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Fases / Actividades</span>
+                            </a>
+                            <a href="#roles" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-green-50 text-slate-600 hover:text-green-700 transition-all group">
+                                <i data-lucide="users" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Roles</span>
+                            </a>
+                        </nav>
+                        <div class="mt-8 pt-8 border-t border-slate-100 italic text-xs text-slate-400 text-balance leading-relaxed">
+                            Alineado a la Norma Técnica N° 002-2025-PCM/SGP
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Content Sections -->
+                <div class="lg:w-3/4 space-y-20 font-light text-slate-700">
+                    
+                    <!-- Section 1: Definition -->
+                    <section id="definition" class="scroll-mt-32" data-aos="fade-up">
+                        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100">
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-3">
+                                <span class="w-10 h-10 bg-green-100 text-green-700 rounded-xl flex items-center justify-center italic tracking-tight font-serif shrink-0 font-extrabold">1</span>
+                                Definición
+                            </h2>
+                            <p class="text-lg leading-relaxed font-normal">
+                                Es el enfoque metodológico que organiza el trabajo de la entidad en una secuencia lógica de actividades (procesos), orientadas a transformar insumos en bienes o servicios que satisfagan las necesidades y expectativas del ciudadano.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 2: Finalidad -->
+                    <section id="purpose" class="scroll-mt-32" data-aos="fade-up">
+                        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100">
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-3">
+                                <span class="w-10 h-10 bg-green-100 text-green-700 rounded-xl flex items-center justify-center italic tracking-tight font-serif shrink-0 font-extrabold">2</span>
+                                Finalidad
+                            </h2>
+                            <p class="text-lg leading-relaxed font-normal">
+                                Eliminar cuellos de botella y actividades que no agregan valor, optimizar el uso de los recursos públicos, estandarizar las operaciones para reducir la variabilidad y colocar al ciudadano en el centro de la cadena de valor de la institución.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 3: Fases / Actividades -->
+                    <section id="phases" class="scroll-mt-32" data-aos="fade-up">
+                        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100">
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-12 flex items-center gap-3 font-sans">
+                                <span class="w-10 h-10 bg-green-100 text-green-700 rounded-xl flex items-center justify-center italic tracking-tight font-serif shrink-0 font-extrabold">3</span>
+                                Fases / Actividades para su implementación
+                            </h2>
+                            
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="map" class="w-5 h-5 text-green-600"></i> Determinación de Procesos
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Identificación y elaboración del Mapa de Procesos (Estratégicos, Misionales y de Soporte).</p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="file-text" class="w-5 h-5 text-green-600"></i> Documentación
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Caracterización de los procesos, elaboración de diagramas de flujo y fichas técnicas.</p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-green-600"></i> Seguimiento y Medición
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Establecimiento de indicadores de desempeño (KPIs).</p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="refresh-cw" class="w-5 h-5 text-green-600"></i> Mejora Continua
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Análisis de brechas y rediseño de procesos para su optimización.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4: Roles -->
+                    <section id="roles" class="scroll-mt-32 pb-10" data-aos="fade-up">
+                        <div class="bg-slate-900 text-white rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-2xl">
+                             <div class="absolute -top-10 -right-10 w-40 h-40 bg-green-600/30 rounded-full blur-3xl"></div>
+                             
+                             <h2 class="text-3xl font-extrabold mb-8 flex items-center gap-3">
+                                <span class="w-10 h-10 bg-white/20 text-white rounded-xl flex items-center justify-center italic font-extrabold font-serif">4</span>
+                                Roles
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-green-400 mb-2">Titular de la Entidad</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Lidera el cambio cultural hacia el enfoque por procesos.</p>
+                                </div>
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-green-400 mb-2">Dueño del Proceso</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Responsable directo del desempeño, medición y mejora del proceso a su cargo.</p>
+                                </div>
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-green-400 mb-2">Planeamiento/Modernización</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Facilita la metodología y brinda asistencia técnica.</p>
+                                </div>
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-green-400 mb-2">Operadores</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Ejecutan las tareas estandarizadas y proponen mejoras operativas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer (Injected via components.js) -->
+    <footer></footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>

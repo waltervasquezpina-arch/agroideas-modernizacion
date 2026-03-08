@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Calidad - AGROIDEAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-900 overflow-x-hidden">
+
+    <!-- Global Header (Injected via components.js) -->
+    <header></header>
+
+    <main class="pt-32 pb-20">
+        <!-- Hero Section for the Page -->
+        <section class="relative py-16 bg-gradient-to-br from-red-900 to-rose-900 text-white overflow-hidden mb-12 border-b-4 border-red-500">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="max-w-2xl" data-aos="fade-right">
+                        <nav class="flex items-center space-x-2 text-red-200/80 text-sm mb-6 uppercase tracking-widest font-bold">
+                            <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            <span>Ejes de Gestión</span>
+                        </nav>
+                        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+                            Gestión de <span class="text-red-400">Calidad</span>
+                        </h1>
+                        <p class="text-lg text-red-100 leading-relaxed mb-8">
+                            Satisfacemos las necesidades de los productores agrarios mediante estándares de excelencia y un compromiso inquebrantable con la mejora continua.
+                        </p>
+                    </div>
+                    <div class="hidden md:block" data-aos="zoom-in">
+                        <div class="w-24 h-24 bg-white/10 backdrop-blur-xl rounded-3xl flex items-center justify-center text-white border border-white/20 shadow-2xl skew-y-3">
+                            <i data-lucide="award" class="w-12 h-12"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                             <!-- Sidebar -->
+                <aside class="lg:w-1/4 space-y-6">
+                    <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sticky top-28" data-aos="fade-up">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">En esta página</h3>
+                        <nav class="space-y-1">
+                            <a href="#definition" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-red-50 text-slate-600 hover:text-red-700 transition-all group">
+                                <i data-lucide="info" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Definición</span>
+                            </a>
+                            <a href="#purpose" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-red-50 text-slate-600 hover:text-red-700 transition-all group">
+                                <i data-lucide="target" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Finalidad</span>
+                            </a>
+                            <a href="#phases" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-red-50 text-slate-600 hover:text-red-700 transition-all group">
+                                <i data-lucide="layers" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Fases / Actividades</span>
+                            </a>
+                            <a href="#roles" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-red-50 text-slate-600 hover:text-red-700 transition-all group">
+                                <i data-lucide="users" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-semibold text-sm">Roles</span>
+                            </a>
+                        </nav>
+                        <div class="mt-8 pt-8 border-t border-slate-100 italic text-xs text-slate-400 text-balance leading-relaxed">
+                            Bajo la Norma Técnica N° 001-2022-PCM-SGP
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Content -->
+                <div class="lg:w-3/4 space-y-20 font-light text-slate-700">
+                    
+                    <!-- Section 1: Definition -->
+                    <section id="definition" class="scroll-mt-32" data-aos="fade-up">
+                        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100 relative overflow-hidden">
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-3">
+                                <span class="w-10 h-10 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-extrabold italic font-serif">1</span>
+                                Definición
+                            </h2>
+                            <p class="text-lg leading-relaxed font-normal">
+                                Es el conjunto de políticas, normas y herramientas orientadas a asegurar que los bienes y servicios públicos entregados cumplan con atributos de excelencia, oportunidad y accesibilidad, superando las expectativas del ciudadano.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 2: Finalidad -->
+                    <section id="purpose" class="scroll-mt-32" data-aos="fade-up">
+                        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100 relative overflow-hidden">
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-3">
+                                <span class="w-10 h-10 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-extrabold italic font-serif">2</span>
+                                Finalidad
+                            </h2>
+                            <p class="text-lg leading-relaxed font-normal">
+                                Generar confianza y legitimidad en la acción del Estado, reducir el número de quejas y reclamos, mitigar riesgos operativos y garantizar el cumplimiento normativo mediante estándares predecibles (como las normas ISO).
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Section 3: Fases / Actividades -->
+                    <section id="phases" class="scroll-mt-32" data-aos="fade-up">
+                        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-slate-100">
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-10 flex items-center gap-3 font-sans">
+                                <span class="w-10 h-10 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-extrabold italic font-serif">3</span>
+                                Fases / Actividades para su implementación
+                            </h2>
+                            
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="clipboard-list" class="w-5 h-5 text-red-600"></i> Planificación de la Calidad
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Establecimiento de la política, objetivos y estándares de calidad esperados.</p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="shield-check" class="w-5 h-5 text-red-600"></i> Aseguramiento
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Implementación de controles preventivos y estandarización documental.</p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="search-check" class="w-5 h-5 text-red-600"></i> Control de Calidad
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Inspección y evaluación del servicio o producto final entregado al ciudadano.</p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                        <i data-lucide="file-check-2" class="w-5 h-5 text-red-600"></i> Auditoría y Revisión
+                                    </h4>
+                                    <p class="text-sm text-slate-500">Evaluaciones internas/externas para identificar no conformidades y aplicar acciones correctivas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4: Roles -->
+                    <section id="roles" class="scroll-mt-32 pb-10" data-aos="fade-up">
+                        <div class="bg-slate-900 text-white rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-2xl">
+                             <div class="absolute -top-10 -right-10 w-40 h-40 bg-red-600/30 rounded-full blur-3xl"></div>
+                             
+                             <h2 class="text-3xl font-extrabold mb-8 flex items-center gap-3">
+                                <span class="w-10 h-10 bg-white/20 text-white rounded-xl flex items-center justify-center italic font-extrabold font-serif">4</span>
+                                Roles
+                            </h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-red-400 mb-2">Comité de Calidad</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Define las directrices y revisa el desempeño general del sistema.</p>
+                                </div>
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-red-400 mb-2">Responsable del Sistema</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Coordina y mantiene la operatividad del modelo de calidad.</p>
+                                </div>
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-red-400 mb-2">Auditores Internos</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Verifican el cumplimiento objetivo de los estándares y procedimientos.</p>
+                                </div>
+                                <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                                    <h4 class="font-bold text-red-400 mb-2">Colaboradores</h4>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Cumplen los lineamientos de calidad en su trabajo diario.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>
