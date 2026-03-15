@@ -45,8 +45,17 @@ Todas las páginas de "Ejes de Gestión" (Conocimiento, Procesos, Calidad, Innov
 | Roles | `roles` |
 | Contenido Multimedia | `multimedia` |
 
-### Gestión de Datos en el Repositorio
-Para actualizar los registros de las tablas en `repositorio.html`, se debe editar directamente el código HTML de la tabla correspondiente dentro del archivo. Las capacidades de búsqueda y ordenación de **DataTables** se aplicarán automáticamente tras la carga de la página.
+### Gestión de Datos y Administración (Dashboard)
+Ya no es necesario editar el código HTML para actualizar los registros. El proyecto incluye un **Dashboard Administrativo (`admin.html`)** que automatiza esta tarea:
+
+1.  **Acceso:** Ingresar a `admin.html` e iniciar sesión con credenciales institucionales.
+2.  **Edición:** Utilizar las pestañas (Secciones, Documentos, Repositorio) para realizar cambios, añadir o eliminar registros.
+3.  **Persistencia Local:** Los cambios se guardan automáticamente en el **LocalStorage** del navegador. Esto significa que los cambios serán visibles para ti y en tu navegador mientras la memoria no se limpie.
+4.  **Exportación:** Para que los cambios sean permanentes en el servidor, utiliza los botones de **"Exportar JSON"** en el Dashboard y reemplaza los archivos correspondientes en la carpeta `/data` del proyecto.
+5.  **Restablecimiento:** Si deseas volver a los datos originales de los archivos JSON, utiliza el botón **"Restablecer BD (JSON)"** en el sidebar del Dashboard.
+
+> [!IMPORTANT]
+> **Seguridad:** El archivo `js/auth.js` protege el acceso al Dashboard. Por seguridad, solo se permiten correos electrónicos institucionales finalizados en `@agroideas.gob.pe`.
 
 > [!TIP]
 > **AOS y Rendimiento:** Si se agregan muchos elementos con animaciones, asegúrese de ajustar el `offset` y `delay` en el HTML (`data-aos-delay="200"`) para evitar que la página pierda fluidez al cargar.

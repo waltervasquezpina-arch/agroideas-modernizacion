@@ -16,13 +16,16 @@ graph TD
     B -->|Invoca| D[js/content-loader.js]
     B -->|Invoca| E[js/auth.js]
     
-    D -->|Request| F[data/content.json]
-    E -->|Request| G[data/users.json]
+    D -->|1. Check| LS[(LocalStorage)]
+    D -->|2. Fallback| F[data/content.json]
+    E -->|1. Check| LS
+    E -->|2. Fallback| G[data/users.json]
     
-    F -->|Data Stream| D
+    LS -->|Data Stream| D
     D -->|DOM Injection| B
     
-    subgraph "Capa de Datos (Persistencia)"
+    subgraph "Persistencia Híbrida"
+        LS
         F
         G
     end
@@ -79,12 +82,13 @@ flowchart LR
 ```
 
 ### Gestión de Cambios y Persistencia (Admin Logic)
-Cuando un administrador realiza cambios, el sistema no solo actualiza la vista, sino que prepara la persistencia mediante la simulación de un backend.
+Cuando un administrador realiza cambios, el sistema ejecuta un flujo de sincronización inmediata:
 
-1.  **Captura**: El `admin-logic.js` recolecta los valores de los formularios.
-2.  **Sincronización**: Actualiza el objeto `data` local en tiempo real.
-3.  **Backup Automático**: Genera un archivo con timestamp (`content_backup_...json`).
-4.  **Persistencia**: En un entorno productivo, el sistema dispara el guardado del archivo físico mediante el comando `exportJSON`.
+1.  **Captura**: El `admin-logic.js` valida los campos (incluyendo restricción de correos institucionales y caracteres especiales).
+2.  **Sincronización Local**: Actualiza las variables `contentData` y `usersData` en memoria.
+3.  **Escritura LocalStorage (Persistence)**: Dispara `syncToLocalStorage()`, guardando los datos en las llaves `agro_content_data` y `agro_users_data`. Esto garantiza que los cambios sobrevivan a refrescos de página y cierres de navegador.
+4.  **Propagación**: El motor `content-loader.js` detecta la presencia de datos en `LocalStorage` y prioriza su carga sobre los archivos JSON estáticos, permitiendo visualización en tiempo real en todo el portal.
+5.  **Hard-Save (Export)**: Mediante la función `exportJSON`, el administrador obtiene la versión final lista para ser subida al repositorio GitHub y reemplazar los archivos físicos `/data`.
 
 ---
 

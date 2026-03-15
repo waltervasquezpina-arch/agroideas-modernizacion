@@ -32,12 +32,18 @@ Las tarjetas de contenido y los bloques de los "Ejes de Gestión" utilizan borde
 ### C. Sistema de Iconografía (Lucide)
 Se ha migrado a **Lucide Icons**, un set de iconos vectoriales ligero y minimalista. Los iconos se utilizan para guiar la lectura y enfatizar secciones clave, manteniendo una escala consistente (`w-5 h-5` para menús, `w-12 h-12` para secciones destacadas).
 
-## 4. Interactividad y Animaciones
+### D. Dashboard y Formularios
+El panel administrativo (`admin.html`) introduce un diseño de **"Admin Moderno"** con:
+- **Modales de Cristal:** Fondos desenfocados (`backdrop-blur-xl`) para formularios de edición.
+- **Notificaciones Toast:** Alertas flotantes animadas con código de colores (Verde: Éxito, Rojo: Error, Azul: Info).
+- **Botones de Visualización:** Implementación de íconos interactivos (ojito) para campos sensibles como contraseñas.
 
-- **AOS (Animate On Scroll):** Configurado con una duración de 800ms y un easing `ease-out-cubic`. Se utiliza principalmente con los efectos `fade-up`, `fade-right` y `zoom-in`.
+## 4. Interactividad y Animaciones
+- **Transiciones de Tab:** Cambio de pestañas en el admin con efectos de fundido suaves.
+- **AOS (Animate On Scroll):** Configurado con una duración de 800ms y un easing `ease-out-cubic`.
 - **Efectos Hover:**
     - **Botones Activos:** Cambio de color con transiciones suaves (`duration-300`).
-    - **Multimedia:** Efecto de escala (`hover:scale-105`) en los contenedores de video tutoriales.
+    - **Multimedia:** Efecto de escala (`hover:scale-105`) en contenedores.
     - **Tablas Repositorio:** Resaltado de filas y botones de acción tipo "Floating Button".
 
 ## 5. Diseño Responsivo

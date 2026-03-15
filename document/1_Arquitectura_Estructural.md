@@ -26,16 +26,18 @@ La estructura del árbol de directorios obedece al siguiente estándar moderno:
 │   └── repositorio.css      # Estilos específicos para las tablas y tabs del repositorio.
 │
 ├── js/
-│   ├── components.js       # Core de inyección de componentes y gestión de UI.
-│   └── auth.js             # Lógica para gestión de accesos y seguridad básica.
+│   ├── components.js       # Core de inyección de componentes y gestión de UI global.
+│   ├── auth.js             # Gestión de sesiones, login y protección de rutas.
+│   ├── admin-logic.js      # Motor CRUD y lógica de persistencia para el dashboard.
+│   └── content-loader.js   # Cargador dinámico de contenido (JSON -> UI).
 │
 ├── data/
-│   └── users.json           # Estructura de datos para simulación de usuarios.
+│   ├── content.json        # Base de datos centralizada de contenidos y repositorio.
+│   └── users.json          # Listado maestro de usuarios institucionales.
 │
 ├── images/                  # Activos gráficos críticos (Logos, Banners).
-│
 ├── document/                # Documentación Técnica (Arquitectura, Estilos, Manual).
-│
+├── admin.html               # Interfaz del Dashboard Administrativo.
 └── *.html                   # Páginas núcleo estandarizadas.
 ```
 

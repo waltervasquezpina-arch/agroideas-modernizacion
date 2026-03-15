@@ -4,8 +4,11 @@ Este proyecto es una aplicación web estática diseñada para difundir e informa
 
 ## 🚀 Características Principales
 
+- **Dashboard Administrativo Completo:** Panel de control privado (`admin.html`) para la gestión integral de contenidos, usuarios y repositorio institucional sin necesidad de base de datos externa.
+- **Persistencia en LocalStorage:** Sistema de almacenamiento local inteligente que permite que los cambios realizados en el panel administrativo se mantengan y reflejen en todo el sitio web de forma inmediata.
 - **Diseño Premium y Moderno:** Interfaz de alto impacto visual utilizando **Tailwind CSS** para un diseño responsivo, limpio y estéticamente agradable.
-- **Arquitectura de Componentes Dinámicos:** Utilización de Vanilla JavaScript (`js/components.js`) para la inyección automática de elementos globales como el **Header** y el **Footer**, asegurando que los cambios realizados en un solo lugar se reflejen en todo el sitio.
+- **Arquitectura de Componentes Dinámicos:** Utilización de Vanilla JavaScript (`js/components.js`) para la inyección automática de elementos globales como el **Header** y el **Footer**.
+- **Seguridad y Control de Acceso:** Sistema de autenticación institucional (`js/auth.js`) con validación de correos corporativos y roles de usuario.
 - **Interactividad Enriquecida:** 
   - **AOS (Animate on Scroll):** Animaciones fluidas al navegar por el contenido.
   - **Lucide Icons:** Iconografía vectorial moderna y consistente.
