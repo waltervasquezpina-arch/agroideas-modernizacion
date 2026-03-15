@@ -8,6 +8,14 @@ const contentLoader = {
 
     async init() {
         try {
+            // Priorizar LocalStorage para reflejar cambios del admin
+            const localData = localStorage.getItem('agro_content_data');
+            if (localData) {
+                this.data = JSON.parse(localData);
+                console.log("Contenido cargado desde LocalStorage");
+                return this.data;
+            }
+
             const response = await fetch('data/content.json');
             if (response.ok) {
                 this.data = await response.json();

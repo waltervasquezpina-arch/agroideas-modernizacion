@@ -7,21 +7,25 @@
 const authSystem = {
     users: [],
     storageKey: 'agroideas_auth_session',
-    usersKey: 'agroideas_registered_users',
+    usersKey: 'agro_users_data', // Sincronizado con admin-logic.js
 
     async init() {
-        // CORRECCIÓN: Siempre intentar cargar desde JSON para obtener nuevos usuarios registrados
         try {
-            const response = await fetch('data/users.json');
-            if (response.ok) {
-                this.users = await response.json();
-                // Actualizamos el cache local por si acaso, pero priorizamos el fetch
-                localStorage.setItem(this.usersKey, JSON.stringify(this.users));
+            // Priorizar datos de LocalStorage (donde el admin guarda los cambios)
+            const storedUsers = localStorage.getItem(this.usersKey);
+            if (storedUsers) {
+                this.users = JSON.parse(storedUsers);
+                console.log("Auth: Usuarios cargados desde LocalStorage");
+            } else {
+                console.log("Auth: LocalStorage vacío, cargando JSON inicial...");
+                const response = await fetch('data/users.json');
+                if (response.ok) {
+                    this.users = await response.json();
+                    localStorage.setItem(this.usersKey, JSON.stringify(this.users));
+                }
             }
         } catch (error) {
-            console.error("Error cargando base de datos de usuarios, usando cache local:", error);
-            const storedUsers = localStorage.getItem(this.usersKey);
-            if (storedUsers) this.users = JSON.parse(storedUsers);
+            console.error("Error en inicialización de autenticación:", error);
         }
 
         // 2. Verificar estado de sesión y proteger página
@@ -181,7 +185,7 @@ const authSystem = {
                     ${adminBtn}
                     <div class="flex flex-col items-end hidden lg:flex">
                         <span class="text-[10px] font-black uppercase text-slate-400 leading-none">Usuario</span>
-                        <span class="text-xs font-bold text-slate-900 leading-tight">${user.name}</span>
+                        <span class="text-xs font-bold text-slate-900 leading-tight">${user.name.split(' ')[0]}</span>
                     </div>
                     <button onclick="authSystem.logout()" class="flex items-center gap-2 bg-red-50 text-red-600 px-3 py-2 rounded-xl text-xs font-black uppercase hover:bg-red-600 hover:text-white transition-all shadow-sm shadow-red-100">
                         <i data-lucide="log-out" class="w-4 h-4"></i>
