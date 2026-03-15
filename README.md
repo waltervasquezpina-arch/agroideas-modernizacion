@@ -36,10 +36,10 @@ El proyecto se organiza en torno a los ejes estratégicos de la modernización:
 
 Para un análisis profundo del sistema, consulte los siguientes manuales en la carpeta `/document`:
 
-1.  **[Arquitectura Estructural](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/1_Arquitectura_Estructural.md)**: Diseño jerárquico y organización de archivos.
-2.  **[Guía de Estilos UI](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/2_Guia_de_Estilos_UI.md)**: Estándares visuales, colores y componentes.
-3.  **[Manual de Despliegue](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/3_Manual_Despliegue_Mantenimiento.md)**: Guía paso a paso para actualización y mantenimiento.
-4.  **[Arquitectura de Datos y Flujos](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/4_Arquitectura_Datos_Interaccion.md)**: Detalle del motor dinámico JSON, seguridad y diagramas UML/Mermaid.
+1.  **[Arquitectura Estructural](document/1_Arquitectura_Estructural.md)**: Diseño jerárquico y organización de archivos.
+2.  **[Guía de Estilos UI](document/2_Guia_de_Estilos_UI.md)**: Estándares visuales, colores y componentes.
+3.  **[Manual de Despliegue](document/3_Manual_Despliegue_Mantenimiento.md)**: Guía paso a paso para actualización y mantenimiento.
+4.  **[Arquitectura de Datos y Flujos](document/4_Arquitectura_Datos_Interaccion.md)**: Detalle del motor dinámico JSON, seguridad y diagramas UML/Mermaid.
 
 ## 🛠️ Tecnologías Utilizadas
 
