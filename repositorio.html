@@ -5,706 +5,928 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repositorio Institucional - AGROIDEAS</title>
     
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Tailwind CSS (for global consistency if needed) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- AOS Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <style>
-        :root {
-            --primary-gob: #C9002B; /* Rojo institucional */
-            --secondary-gob: #1E2D3D; /* Azul oscuro */
-            --accent-gob: #0072CE; /* Azul claro para acentos */
-            --bg-light: #F4F7F6;
-            --text-muted: #6c757d;
-        }
-        
-        body {
-            background-color: var(--bg-light);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            color: #333;
-        }
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    <!-- Repositorio Custom Styles -->
+    <link rel="stylesheet" href="css/repositorio.css">
+    <link rel="stylesheet" href="css/modern-styles.css">
 
-        /* Encabezado del Modelo */
-        .header-section {
-            background: linear-gradient(135deg, var(--secondary-gob) 0%, #2a3f54 100%);
-            color: white;
-            padding: 5rem 0 3.5rem 0; /* Padding top aumentado para el sticky navbar */
-            margin-bottom: 2rem;
-            border-bottom: 5px solid var(--primary-gob);
-        }
-
-        .header-section h1 {
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        /* Estilos de las Pestañas (Pills) */
-        .nav-pills-custom {
-            background: white;
-            padding: 0.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            margin-bottom: 2.5rem;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .nav-pills-custom .nav-item {
-            flex: 1;
-            text-align: center;
-        }
-
-        .nav-pills-custom .nav-link {
-            color: var(--secondary-gob);
-            border-radius: 8px;
-            font-weight: 600;
-            padding: 1rem;
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-pills-custom .nav-link i {
-            font-size: 1.5rem;
-        }
-
-        .nav-pills-custom .nav-link:hover {
-            background-color: #f8f9fa;
-            transform: translateY(-2px);
-        }
-
-        .nav-pills-custom .nav-link.active {
-            background-color: var(--primary-gob);
-            color: white;
-            box-shadow: 0 4px 10px rgba(201, 0, 43, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Tarjetas de Documentos */
-        .doc-card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            transition: transform 0.2s, box-shadow 0.2s;
-            min-height: 100%;
-            background: white;
-        }
-
-        .doc-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .doc-icon {
-            font-size: 2.5rem;
-            color: var(--accent-gob);
-        }
-
-        .list-group-item-action {
-            border-left: 3px solid transparent;
-            padding: 1rem 1.25rem;
-        }
-        
-        .list-group-item-action:hover {
-            border-left: 3px solid var(--primary-gob);
-            background-color: #f8f9fa;
-        }
-
-        /* Acordeón de Directivas Internas */
-        .accordion-button:not(.collapsed) {
-            color: var(--primary-gob);
-            background-color: rgba(201, 0, 43, 0.05);
-            box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
-            font-weight: bold;
-        }
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-        .accordion-item {
-            border-left: none;
-            border-right: none;
-        }
-
-        /* Banner Destacado */
-        .featured-banner {
-            background-color: white;
-            border-left: 5px solid var(--accent-gob);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .featured-icon {
-            font-size: 2.5rem;
-            color: var(--accent-gob);
-            background: rgba(0, 114, 206, 0.1);
-            padding: 1rem;
-            border-radius: 50%;
-        }
-
-        /* Formulario de Ideación */
-        .form-ideacion {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border-top: 4px solid var(--accent-gob);
-            padding: 2rem;
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: var(--secondary-gob);
-        }
-
-        /* Tabla de Publicaciones */
-        .table-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-        }
-
-        .table thead {
-            background-color: var(--secondary-gob);
-            color: white;
-        }
-
-        .table th {
-            font-weight: 600;
-            border: none;
-            padding: 1rem;
-        }
-
-        .table td {
-            padding: 1rem;
-            vertical-align: middle;
-        }
-
-        .btn-download {
-            background-color: #f8f9fa;
-            color: var(--primary-gob);
-            border: 1px solid #e9ecef;
-            transition: all 0.2s;
-        }
-
-        .btn-download:hover {
-            background-color: var(--primary-gob);
-            color: white;
-        }
-
-        /* Buscador */
-        .search-box {
-            position: relative;
-            min-width: 300px;
-        }
-        
-        .search-box i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
-        
-        .search-box input {
-            padding-left: 40px;
-            border-radius: 50px;
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-        }
-        
-        .search-box input:focus {
-            box-shadow: none;
-            border-color: var(--primary-gob);
-            background-color: white;
-        }
-        
-        /* Badges de Estado del Documento (Según NT) */
-        .status-publicado { background-color: #198754; color: white; }
-        .status-validado { background-color: #0dcaf0; color: #000; }
-        .status-propuesto { background-color: #ffc107; color: #000; }
-        .status-archivado { background-color: #6c757d; color: white; }
-
-        /* Ajustes para Scroll con Header Sticky */
-        main {
-            margin-top: 20px;
-        }
-
-        /* PARCHE DE COMPATIBILIDAD TAILWIND/BOOTSTRAP */
-        .collapse:not(.show) {
-            display: none !important;
-        }
-        .collapse.show {
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-        .collapsing {
-            height: 0;
-            overflow: hidden;
-            transition: height 0.35s ease;
-            display: block !important;
-        }
-    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-slate-50" data-page-id="repositorio">
 
-    <!-- Header Global Dinámico -->
     <header></header>
 
-    <!-- Encabezado de Sección (Modelo) -->
-    <section class="header-section text-center shadow-sm">
-        <div class="container">
-            <span class="badge bg-danger mb-2">Unidad de Planeamiento y Presupuesto</span>
-            <h1 class="display-5"><i class="bi bi-diagram-3 me-2"></i> Repositorio Institucional</h1>
-            <p class="lead mb-0 text-light opacity-75">Activos de Conocimiento, Innovación y Gestión Documental</p>
-        </div>
-    </section>
-
-    <main class="container pb-5">
+    <main class="pt-32 transition-opacity duration-700">
+        <!-- Encabezado de Sección -->
+        <section class="header-section text-center py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center justify-center space-x-2 text-blue-200/50 text-xs mb-8 uppercase tracking-[0.2em] font-bold">
+                    <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-blue-400"></i>
+                    <span class="text-white">Repositorio Institucional</span>
+                </nav>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 flex justify-center items-center gap-3">
+                    <i data-lucide="folder-kanban" class="w-10 h-10"></i> Repositorio Institucional
+                </h1>
+                <p class="text-xl text-blue-100/80 font-medium">Activos de Conocimiento, Innovación y Gestión Documental</p>
+            </div>
+        </section>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         <!-- Navegación por Pestañas -->
-        <ul class="nav nav-pills-custom" id="repositorioTab" role="tablist" data-aos="fade-up">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active w-100" id="directivas-tab" data-bs-toggle="pill" data-bs-target="#directivas" type="button" role="tab" aria-controls="directivas" aria-selected="true">
-                    <i class="bi bi-bank"></i>
-                    <span>Normatividad y Directivas</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link w-100" id="conocimiento-tab" data-bs-toggle="pill" data-bs-target="#conocimiento" type="button" role="tab" aria-controls="conocimiento" aria-selected="false">
-                    <i class="bi bi-journal-bookmark-fill"></i>
-                    <span>Gestión del Conocimiento</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link w-100" id="innovacion-tab" data-bs-toggle="pill" data-bs-target="#innovacion" type="button" role="tab" aria-controls="innovacion" aria-selected="false">
-                    <i class="bi bi-lightbulb-fill"></i>
-                    <span>Innovación Pública</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link w-100" id="publicaciones-tab" data-bs-toggle="pill" data-bs-target="#publicaciones" type="button" role="tab" aria-controls="publicaciones" aria-selected="false">
-                    <i class="bi bi-file-earmark-bar-graph"></i>
-                    <span>Publicaciones UPP</span>
-                </button>
-            </li>
-        </ul>
+        <div class="bg-white p-2 rounded-2xl shadow-sm mb-12 flex flex-wrap justify-between gap-2" data-aos="fade-up">
+            <button class="tab-link active flex-1 min-w-[150px] p-4 rounded-xl font-bold flex flex-col items-center gap-2 transition-all shadow-sm border border-transparent" data-target="directivas">
+                <i data-lucide="landmark" class="w-6 h-6"></i>
+                <span class="text-sm">Normatividad y Directivas</span>
+            </button>
+            <button class="tab-link flex-1 min-w-[150px] p-4 rounded-xl font-bold flex flex-col items-center gap-2 transition-all text-slate-600 shadow-sm border border-transparent" data-target="conocimiento">
+                <i data-lucide="book-marked" class="w-6 h-6"></i>
+                <span class="text-sm">Gestión del Conocimiento</span>
+            </button>
+            <button class="tab-link flex-1 min-w-[150px] p-4 rounded-xl font-bold flex flex-col items-center gap-2 transition-all text-slate-600 shadow-sm border border-transparent" data-target="innovacion">
+                <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                <span class="text-sm">Innovación Pública</span>
+            </button>
+            <button class="tab-link flex-1 min-w-[150px] p-4 rounded-xl font-bold flex flex-col items-center gap-2 transition-all text-slate-600 shadow-sm border border-transparent" data-target="publicaciones">
+                <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                <span class="text-sm">Publicaciones UPP</span>
+            </button>
+        </div>
 
         <!-- Contenedor de Contenido -->
-        <div class="tab-content" id="repositorioTabContent">
+        <div id="tab-content-container">
             
-            <!-- ==========================================
-                 1. DIRECTIVAS Y NORMATIVA 
-            =========================================== -->
-            <div class="tab-pane fade show active" id="directivas" role="tabpanel" aria-labelledby="directivas-tab">
+            <!-- 1. DIRECTIVAS Y NORMATIVA -->
+            <div id="directivas" class="tab-pane block space-y-8">
                 <!-- Banner Destacado -->
-                <div class="featured-banner">
-                    <div class="featured-icon">
-                        <i class="bi bi-star-fill"></i>
+                <div class="bg-white border-l-8 border-blue-500 rounded-2xl shadow-sm p-8 flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+                        <i data-lucide="star" class="w-10 h-10 fill-current"></i>
                     </div>
                     <div>
-                        <span class="badge status-publicado mb-2">Vigente - Publicado</span>
-                        <h4 class="mb-1 fw-bold">Norma Técnica N° 001-2025-PCM/SGP</h4>
-                        <p class="text-muted mb-2">Norma Técnica para la Gestión del Conocimiento en el Sector Público. Establece las disposiciones y el ciclo vital del conocimiento.</p>
-                        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-download me-1"></i> Descargar Norma</button>
+                        <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-bold rounded-full mb-3">Vigente - Publicado</span>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">Norma Técnica N° 001-2025-PCM/SGP</h4>
+                        <p class="text-slate-600 mb-4">Norma Técnica para la Gestión del Conocimiento en el Sector Público. Establece las disposiciones y el ciclo vital del conocimiento.</p>
+                        <button class="px-4 py-2 border-2 border-blue-600 text-blue-600 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition-all flex items-center gap-2 group">
+                            <i data-lucide="download" class="w-5 h-5 group-hover:animate-bounce"></i> Descargar Norma
+                        </button>
                     </div>
                 </div>
 
-                <div class="row g-4">
-                    <!-- Tarjeta 1: Marco Rector -->
-                    <div class="col-12">
-                        <div class="card doc-card">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold border-bottom pb-2"><i class="bi bi-building text-danger me-2"></i>Marco Rector (PCM/MIDAGRI)</h5>
-                                <div class="list-group list-group-flush mt-3">
-                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <i class="bi bi-file-pdf text-danger me-2"></i> RSGP N° 001-2025-PCM-SGP
-                                            <div class="small text-muted mt-1">Aprobación de la NT de Gestión del Conocimiento</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <i class="bi bi-file-pdf text-danger me-2"></i> RSG N° 0089-2025-MIDAGRI-SG
-                                            <div class="small text-muted mt-1">Aprobación del Plan de GC 2025-2026 MIDAGRI</div>
-                                        </div>
-                                    </a>
-                                </div>
+                <!-- Marco Rector -->
+                <div class="bg-white rounded-[2rem] shadow-sm overflow-hidden border border-slate-100">
+                    <div class="p-8 border-b border-slate-100">
+                        <h5 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                            <i data-lucide="building-2" class="w-6 h-6 text-red-600"></i> Marco Rector (PCM/MIDAGRI)
+                        </h5>
+                    </div>
+                    <div class="divide-y divide-slate-50">
+                        <a href="#" class="p-6 flex justify-between items-center hover:bg-slate-50 transition-all border-l-4 border-transparent hover:border-red-600 group">
+                            <div>
+                                <h6 class="font-bold text-slate-800 flex items-center gap-2 italic">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-red-600"></i> RSGP N° 001-2025-PCM-SGP
+                                </h6>
+                                <p class="text-sm text-slate-500 mt-1">Aprobación de la NT de Gestión del Conocimiento</p>
                             </div>
-                        </div>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#" class="p-6 flex justify-between items-center hover:bg-slate-50 transition-all border-l-4 border-transparent hover:border-red-600 group">
+                            <div>
+                                <h6 class="font-bold text-slate-800 flex items-center gap-2 italic">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-red-600"></i> RSG N° 0089-2025-MIDAGRI-SG
+                                </h6>
+                                <p class="text-sm text-slate-500 mt-1">Aprobación del Plan de GC 2025-2026 MIDAGRI</p>
+                            </div>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Directivas Internas AGROIDEAS -->
+                <div class="bg-white rounded-[2rem] shadow-sm overflow-hidden border border-slate-100">
+                    <div class="p-8 border-b border-slate-100 bg-slate-50/50">
+                        <h5 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                            <i data-lucide="folder-check" class="w-6 h-6 text-blue-600"></i> Directivas Internas (AGROIDEAS)
+                        </h5>
                     </div>
 
-                    <!-- Tarjeta 2: Directivas Internas AGROIDEAS -->
-                    <div class="col-12">
-                        <div class="card doc-card">
-                            <div class="card-body p-0">
-                                <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
-                                    <h5 class="card-title fw-bold mb-0 text-sm md:text-base"><i class="bi bi-folder-check text-primary me-2"></i>Directivas Internas (AGROIDEAS)</h5>
-                                </div>
-                                
-                                <div class="accordion accordion-flush" id="accordionUnidadesFuncionales">
-                                    
-                                    <!-- 1. Dirección -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingDir">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDir" aria-expanded="false" aria-controls="collapseDir">
-                                                1. Unidades Funcionales de Dirección
-                                            </button>
-                                        </h2>
-                                        <div id="collapseDir" class="accordion-collapse collapse" aria-labelledby="headingDir" data-bs-parent="#accordionUnidadesFuncionales">
-                                            <div class="accordion-body p-0">
-                                                
-                                                <!-- 1.1 Consejo Directivo -->
-                                                <div class="bg-light fw-bold text-secondary py-2 px-3 border-bottom" style="font-size: 0.85rem;">
-                                                    <i class="bi bi-person-workspace me-2"></i>1.1 Consejo Directivo
-                                                </div>
-                                                <div class="px-3 py-3 text-muted small border-bottom">
-                                                    <i class="bi bi-info-circle me-1 text-warning"></i> En proceso de actualización...
-                                                </div>
-
-                                                <!-- 1.2 Dirección Ejecutiva -->
-                                                <div class="bg-light fw-bold text-secondary py-2 px-3 border-bottom" style="font-size: 0.85rem;">
-                                                    <i class="bi bi-person-badge me-2"></i>1.2 Dirección Ejecutiva
-                                                </div>
-                                                <div class="table-responsive mb-0">
-                                                    <table class="table table-hover table-sm mb-0 align-middle">
-                                                        <thead class="table-light text-muted" style="font-size: 0.75rem;">
-                                                            <tr>
-                                                                <th class="ps-3 py-2" style="width: 40%;">Directiva</th>
-                                                                <th class="py-2" style="width: 30%;">Código Directiva</th>
-                                                                <th class="py-2" style="width: 20%;">Fecha Publicación</th>
-                                                                <th class="py-2 pe-3" style="width: 10%;">Acción</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody style="font-size: 0.85rem;">
-                                                            <tr>
-                                                                <td class="ps-3"><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Directiva de Gestión...</td>
-                                                                <td><span class="badge bg-light text-dark border fw-normal">DI N°001-2019-AGROIDEAS/DE</span></td>
-                                                                <td>23/05/2019</td>
-                                                                <td class="text-center">
-                                                                    <button class="btn btn-sm btn-outline-danger border-0 p-1" title="Ver PDF">
-                                                                        <i class="bi bi-filetype-pdf" style="font-size: 1.4rem;"></i>
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <!-- Accordion Custom -->
+                    <div class="divide-y divide-slate-100" id="accordion-directivas">
+                        
+                        <!-- 1. Dirección -->
+                        <div class="accordion-item">
+                            <button class="w-full p-6 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition-all group" onclick="toggleAccordion(this)">
+                                <span class="font-bold text-slate-700">1. Unidades Funcionales de Dirección</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform chevron-icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-0 border-t border-slate-50">
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2">1.1 Consejo Directivo</div>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-left text-sm">
+                                            <thead class="bg-slate-50 text-slate-500">
+                                                <tr class="text-[10px] uppercase font-black tracking-widest">
+                                                    <th class="p-4">Directiva</th>
+                                                    <th class="p-4">Código Directiva</th>
+                                                    <th class="p-4">Fecha Publicación</th>
+                                                    <th class="p-4 text-center">Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-slate-50">
+                                                <tr>
+                                                    <td class="p-4 text-slate-400 italic">No desarrollado</td>
+                                                    <td class="p-4 text-slate-400 font-mono text-xs">---</td>
+                                                    <td class="p-4 text-slate-400 text-xs">-/-/-</td>
+                                                    <td class="p-4 text-center">---</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
 
-                                    <!-- 2. Asesoramiento -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingAse">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAse" aria-expanded="true" aria-controls="collapseAse">
-                                                2. Unidades Funcionales de Asesoramiento
-                                            </button>
-                                        </h2>
-                                        <div id="collapseAse" class="accordion-collapse collapse show" aria-labelledby="headingAse" data-bs-parent="#accordionUnidadesFuncionales">
-                                            <div class="accordion-body p-0">
-                                                <!-- 2.1 UAJ -->
-                                                <div class="bg-light fw-bold text-secondary py-2 px-3 border-bottom" style="font-size: 0.85rem;">
-                                                    <i class="bi bi-shield-check me-2"></i>2.1 Unidad de Asesoría Jurídica
-                                                </div>
-                                                <div class="table-responsive mb-0">
-                                                    <table class="table table-hover table-sm mb-0 align-middle">
-                                                        <tbody style="font-size: 0.85rem;">
-                                                            <tr>
-                                                                <td class="ps-3" style="width: 40%;"><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Directiva Test 1</td>
-                                                                <td style="width: 30%;"><span class="badge bg-light text-dark border fw-normal">DI N°003-2023-AGROIDEAS/UAJ</span></td>
-                                                                <td style="width: 20%;">23/02/2021</td>
-                                                                <td class="text-center" style="width: 10%;">
-                                                                    <button class="btn btn-sm btn-outline-danger border-0 p-1" title="Ver PDF">
-                                                                        <i class="bi bi-filetype-pdf" style="font-size: 1.4rem;"></i>
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-
-                                                <!-- 2.2 UPP -->
-                                                <div class="bg-light fw-bold text-secondary py-2 px-3 border-bottom border-top" style="font-size: 0.85rem;">
-                                                    <i class="bi bi-graph-up-arrow me-2"></i>2.2 Unidad de Planeamiento y Presupuesto
-                                                </div>
-                                                <div class="table-responsive mb-0">
-                                                    <table class="table table-hover table-sm mb-0 align-middle">
-                                                        <tbody style="font-size: 0.85rem;">
-                                                            <tr>
-                                                                <td class="ps-3" style="width: 40%;"><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Directiva Test 1</td>
-                                                                <td style="width: 30%;"><span class="badge bg-light text-dark border fw-normal">DI N°003-2020-AGROIDEAS/UPP</span></td>
-                                                                <td style="width: 20%;">23/05/2020</td>
-                                                                <td class="text-center" style="width: 10%;">
-                                                                    <button class="btn btn-sm btn-outline-danger border-0 p-1" title="Ver PDF">
-                                                                        <i class="bi bi-filetype-pdf" style="font-size: 1.4rem;"></i>
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2 border-t border-slate-100">1.2 Dirección Ejecutiva</div>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-left text-sm">
+                                            <tbody class="divide-y divide-slate-50">
+                                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                                    <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                    <td class="p-4 text-xs font-mono text-slate-500">DI N°001-2019-MIDAGRI-AGROIDEAS/DE</td>
+                                                    <td class="p-4 text-xs text-slate-600">23/5/2019</td>
+                                                    <td class="p-4 text-center">
+                                                        <button class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"><i data-lucide="file-type-2" class="w-6 h-6"></i></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    
-                                    <!-- 3. Apoyo -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingApo">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseApo" aria-expanded="false" aria-controls="collapseApo">
-                                                3. Unidad Funcional de Apoyo
-                                            </button>
-                                        </h2>
-                                        <div id="collapseApo" class="accordion-collapse collapse" aria-labelledby="headingApo" data-bs-parent="#accordionUnidadesFuncionales">
-                                            <div class="accordion-body p-0">
-                                                <div class="bg-light fw-bold text-secondary py-2 px-3 border-bottom" style="font-size: 0.85rem;">
-                                                    <i class="bi bi-buildings me-2"></i>3.1 Unidad de Administración
-                                                </div>
-                                                <div class="table-responsive mb-0">
-                                                    <table class="table table-hover table-sm mb-0 align-middle">
-                                                        <tbody style="font-size: 0.85rem;">
-                                                            <tr>
-                                                                <td class="ps-3" style="width: 40%;"><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Directiva Administración</td>
-                                                                <td style="width: 30%;"><span class="badge bg-light text-dark border fw-normal">DI N°003-2023-AGROIDEAS/UA</span></td>
-                                                                <td style="width: 20%;">23/02/2021</td>
-                                                                <td class="text-center" style="width: 10%;">
-                                                                    <button class="btn btn-sm btn-outline-danger border-0 p-1" title="Ver PDF">
-                                                                        <i class="bi bi-filetype-pdf" style="font-size: 1.4rem;"></i>
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- 4. Línea -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingLin">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLin" aria-expanded="false" aria-controls="collapseLin">
-                                                4. Unidades Funcionales de Línea
-                                            </button>
-                                        </h2>
-                                        <div id="collapseLin" class="accordion-collapse collapse" aria-labelledby="headingLin" data-bs-parent="#accordionUnidadesFuncionales">
-                                            <div class="accordion-body p-0">
-                                                <div class="bg-light fw-bold text-secondary py-2 px-3 border-bottom" style="font-size: 0.85rem;">
-                                                    <i class="bi bi-mortarboard me-2"></i>4.1 UPDC
-                                                </div>
-                                                <div class="table-responsive mb-0">
-                                                    <table class="table table-hover table-sm mb-0 align-middle">
-                                                        <tbody style="font-size: 0.85rem;">
-                                                            <tr>
-                                                                <td class="ps-3" style="width: 40%;"><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Directiva Capacidades</td>
-                                                                <td style="width: 30%;"><span class="badge bg-light text-dark border fw-normal">DI N°003-2023-AGROIDEAS/UPDC</span></td>
-                                                                <td style="width: 20%;">23/02/2021</td>
-                                                                <td class="text-center" style="width: 10%;">
-                                                                    <button class="btn btn-sm btn-outline-danger border-0 p-1" title="Ver PDF">
-                                                                        <i class="bi bi-filetype-pdf" style="font-size: 1.4rem;"></i>
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- 5. Desconcentradas -->
-                                    <div class="accordion-item border-bottom-0">
-                                        <h2 class="accordion-header" id="headingDes">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDes" aria-expanded="false" aria-controls="collapseDes">
-                                                5. Unidades Desconcentradas
-                                            </button>
-                                        </h2>
-                                        <div id="collapseDes" class="accordion-collapse collapse" aria-labelledby="headingDes" data-bs-parent="#accordionUnidadesFuncionales">
-                                            <div class="accordion-body p-0">
-                                                <div class="px-3 py-3 text-muted small">
-                                                    <i class="bi bi-info-circle me-1 text-warning"></i> En proceso de carga...
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 2. Asesoramiento -->
+                        <div class="accordion-item active">
+                            <button class="w-full p-6 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition-all group" onclick="toggleAccordion(this)">
+                                <span class="font-bold text-slate-700">2. Unidades Funcionales de Asesoramiento</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform rotate-180 chevron-icon"></i>
+                            </button>
+                            <div class="accordion-content" style="max-height: 2000px;">
+                                <div class="p-0 border-t border-slate-50">
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2">2.1 Unidad de Asesoría Jurídica</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UAJ</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 2</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°005-2019-MIDAGRI-AGROIDEAS/UAJ</td>
+                                                <td class="p-4 text-xs text-slate-600">15/2/2019</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2 border-t border-slate-100">2.2 Unidad de Planeamiento y Presupuesto</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2020-MIDAGRI-AGROIDEAS/UPP</td>
+                                                <td class="p-4 text-xs text-slate-600">23/5/2020</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 2</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2018-MIDAGRI-AGROIDEAS/UPP</td>
+                                                <td class="p-4 text-xs text-slate-600">15/4/2018</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2 border-t border-slate-100">2.3 Unidad de Seguimiento y Evaluación</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°002-2026-MIDAGRI-AGROIDEAS/USE</td>
+                                                <td class="p-4 text-xs text-slate-600">25/2/2026</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 2</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°001-2026-MIDAGRI-AGROIDEAS/USE</td>
+                                                <td class="p-4 text-xs text-slate-600">26/1/2026</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Apoyo -->
+                        <div class="accordion-item">
+                            <button class="w-full p-6 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition-all group" onclick="toggleAccordion(this)">
+                                <span class="font-bold text-slate-700">3. Unidad Funcional de Apoyo</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform chevron-icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-0 border-t border-slate-50">
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2">3.1 Unidad de Administración</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UA</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 2</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UA</td>
+                                                <td class="p-4 text-xs text-slate-600">24/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 3</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UA</td>
+                                                <td class="p-4 text-xs text-slate-600">25/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 4</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UA</td>
+                                                <td class="p-4 text-xs text-slate-600">26/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Unidades Funcionales de Línea -->
+                        <div class="accordion-item">
+                            <button class="w-full p-6 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition-all group" onclick="toggleAccordion(this)">
+                                <span class="font-bold text-slate-700">4. Unidades Funcionales de Línea</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform chevron-icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-0 border-t border-slate-50">
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2">4.1 Unidad de Promoción y Desarrollo de Capacidades</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UPDC</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 2</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UPDC</td>
+                                                <td class="p-4 text-xs text-slate-600">24/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2 border-t border-slate-100">4.2 Unidad de Negocios</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UN</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/UN</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2 border-t border-slate-100">4.3 Unidad de Reconversión e Intervenciones Especiales</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/URIE</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/URIE</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Unidades Desconcentradas -->
+                        <div class="accordion-item">
+                            <button class="w-full p-6 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition-all group" onclick="toggleAccordion(this)">
+                                <span class="font-bold text-slate-700">5. Unidades Desconcentradas</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform chevron-icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-0 border-t border-slate-50">
+                                    <div class="bg-slate-50 text-xs font-black text-slate-400 uppercase tracking-widest p-4 pb-2">5.1 Unidades Regionales</div>
+                                    <table class="w-full text-left text-sm">
+                                        <tbody class="divide-y divide-slate-50">
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700 w-1/3">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/URIE</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50/50 transition-colors">
+                                                <td class="p-4 font-bold text-slate-700">Directiva Test 1</td>
+                                                <td class="p-4 text-xs font-mono text-slate-500">DI N°003-2023-MIDAGRI-AGROIDEAS/URIE</td>
+                                                <td class="p-4 text-xs text-slate-600">23/2/2021</td>
+                                                <td class="p-4 text-center"><button class="text-red-600"><i data-lucide="file-type-2" class="w-6 h-6"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <!-- ==========================================
-                 2. GESTIÓN DEL CONOCIMIENTO
-            =========================================== -->
-            <div class="tab-pane fade" id="conocimiento" role="tabpanel" aria-labelledby="conocimiento-tab">
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card doc-card">
-                            <div class="card-body">
-                                <div class="text-center mb-3">
-                                    <i class="bi bi-tools doc-icon"></i>
-                                    <h5 class="card-title mt-2 fw-bold">Herramientas</h5>
-                                    <p class="text-muted small">Guías y manuales de apoyo</p>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-file-pdf text-danger me-2"></i> Manual de Autodiagnóstico GC</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-file-word text-primary me-2"></i> Ficha de Lecciones Aprendidas</a>
-                                </div>
+            <!-- 2. GESTIÓN DEL CONOCIMIENTO -->
+            <div id="conocimiento" class="tab-pane hidden">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Tarjeta Herramientas -->
+                    <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100 doc-card">
+                        <div class="flex flex-col items-center text-center mb-6">
+                            <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-4">
+                                <i data-lucide="wrench" class="w-8 h-8"></i>
+                            </div>
+                            <h5 class="text-xl font-bold text-slate-900">Herramientas</h5>
+                            <p class="text-sm text-slate-500">Guías y manuales de apoyo</p>
+                        </div>
+                        <div class="space-y-3">
+                            <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors text-slate-700 font-medium">
+                                <i data-lucide="file-text" class="w-5 h-5 text-red-500"></i> Manual Autodiagnóstico
+                            </a>
+                            <a href="#" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors text-slate-700 font-medium">
+                                <i data-lucide="file-signature" class="w-5 h-5 text-blue-500"></i> Ficha de Lecciones
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Comunidades -->
+                    <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100 doc-card">
+                        <div class="flex flex-col items-center text-center mb-6">
+                            <div class="w-16 h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-4">
+                                <i data-lucide="users-2" class="w-8 h-8"></i>
+                            </div>
+                            <h5 class="text-xl font-bold text-slate-900">Comunidades de Práctica</h5>
+                            <p class="text-sm text-slate-500">Actas y agendas de las CoP</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-colors group">
+                                <span class="text-slate-700 font-medium flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i> Acta de Instalación
+                                </span>
+                                <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-black uppercase rounded-full">Publicado</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="card doc-card">
-                            <div class="card-body">
-                                <div class="text-center mb-3">
-                                    <i class="bi bi-people doc-icon text-success"></i>
-                                    <h5 class="card-title mt-2 fw-bold">Comunidades de Práctica</h5>
-                                    <p class="text-muted small">Actas y agendas de las CoP</p>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                        <span><i class="bi bi-file-text me-2"></i> Acta de Instalación CoP</span>
-                                        <span class="badge status-publicado rounded-pill">Publicado</span>
-                                    </a>
-                                </div>
+                    <!-- Tarjeta Experiencias -->
+                    <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100 doc-card">
+                        <div class="flex flex-col items-center text-center mb-6">
+                            <div class="w-16 h-16 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-4">
+                                <i data-lucide="medal" class="w-8 h-8"></i>
                             </div>
+                            <h5 class="text-xl font-bold text-slate-900">Experiencias</h5>
+                            <p class="text-sm text-slate-500">Buenas prácticas documentadas</p>
                         </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card doc-card">
-                            <div class="card-body">
-                                <div class="text-center mb-3">
-                                    <i class="bi bi-award doc-icon text-warning"></i>
-                                    <h5 class="card-title mt-2 fw-bold">Experiencias</h5>
-                                    <p class="text-muted small">Buenas prácticas documentadas</p>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <a href="#" class="list-group-item list-group-item-action text-muted text-center pt-4">
-                                        <i class="bi bi-info-circle me-2"></i> Aún sin publicaciones.
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="flex flex-col items-center justify-center py-8 text-slate-400 italic">
+                            <i data-lucide="alert-circle" class="w-10 h-10 mb-2 opacity-20"></i>
+                            <span class="text-sm">Aún sin publicaciones</span>
                         </div>
                     </div>
                 </div>
+
+                </div>
             </div>
 
-            <!-- ==========================================
-                 3. INNOVACIÓN PÚBLICA (Con Buzón)
-            =========================================== -->
-            <div class="tab-pane fade" id="innovacion" role="tabpanel" aria-labelledby="innovacion-tab">
-                <div class="form-ideacion mb-5">
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="featured-icon me-3 bg-light p-3 rounded-circle">
-                            <i class="bi bi-mailbox text-primary h3 mb-0"></i>
+            <!-- 3. INNOVACIÓN PÚBLICA -->
+            <div id="innovacion" class="tab-pane hidden space-y-12">
+                
+                <!-- Invitación a Innovar -->
+                <div class="bg-blue-50/50 rounded-[2.5rem] p-10 border border-blue-100 flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-20 h-20 bg-white shadow-xl shadow-blue-200/50 rounded-full flex items-center justify-center text-blue-600 flex-shrink-0" data-aos="zoom-in">
+                        <i data-lucide="rocket" class="w-10 h-10"></i>
+                    </div>
+                    <div class="flex-grow" data-aos="fade-right">
+                        <h4 class="text-2xl font-black text-slate-900 mb-3">¡Transforma tus ideas en Valor Público!</h4>
+                        <p class="text-slate-600 font-medium leading-relaxed mb-8 max-w-4xl">
+                            La <strong>Innovación Pública</strong> es el proceso inclusivo e iterativo para definir problemas públicos y cocrear soluciones viables que modernicen al Estado. Si has identificado un desafío en tus labores diarias o una oportunidad para mejorar la calidad de nuestros servicios, te invitamos a proponer una solución. <br>
+                            <span class="italic text-blue-600 mt-2 block">¡El cambio empieza con una idea!</span>
+                        </p>
+                        
+                        <a href="#" class="inline-flex items-center gap-5 bg-[#0070cc] text-white px-8 py-4 rounded-3xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 group">
+                            <div class="w-10 h-10 bg-[#005fb2] rounded-xl flex items-center justify-center transition-colors">
+                                <i data-lucide="download" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-sm leading-tight">Descargar Ficha de Iniciativa</span>
+                                <span class="block text-[11px] font-medium opacity-70">(Anexo 1 - NT GIP)</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="bg-white rounded-[2.5rem] shadow-xl border-t-8 border-blue-600 p-10">
+                    <div class="flex items-center gap-6 mb-10">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                            <i data-lucide="mailbox" class="w-8 h-8"></i>
                         </div>
                         <div>
-                            <h4 class="fw-bold mb-1">Buzón de Ideación Digital</h4>
-                            <p class="text-muted mb-0">Registra una iniciativa de innovación pública.</p>
+                            <h4 class="text-2xl font-black text-slate-900 mb-1">Buzón de Proyectos de Innovación Pública</h4>
+                            <p class="text-slate-500 font-medium">Registra una iniciativa de innovación pública.</p>
                         </div>
                     </div>
-                    
-                    <form action="#" method="POST">
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <label class="form-label">Nombre de la Iniciativa</label>
-                                <input type="text" class="form-control" placeholder="Título sugerido..." required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Unidad de Organización</label>
-                                <select class="form-select" required>
-                                    <option value="" selected disabled>Seleccione...</option>
-                                    <option>Planeamiento y Presupuesto</option>
-                                    <option>Administración</option>
-                                    <option>Dirección Ejecutiva</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Descripción de la Mejora</label>
-                                <textarea class="form-control" rows="3" required></textarea>
-                            </div>
-                            <div class="col-12 text-end">
-                                <button type="submit" class="btn btn-primary px-4"><i class="bi bi-send me-2"></i> Enviar al Buzón</button>
-                            </div>
+
+                    <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-3">Nombre de la Iniciativa</label>
+                            <input type="text" class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-medium" placeholder="Título sugerido...">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-3">Unidad de Organización</label>
+                            <select class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-medium appearance-none">
+                                <option>Seleccione...</option>
+                                <option>Planeamiento y Presupuesto</option>
+                                <option>Administración</option>
+                                <option>Dirección Ejecutiva</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-3">Descripción de la Mejora</label>
+                            <textarea rows="4" class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-medium resize-none"></textarea>
+                        </div>
+                        <div class="md:col-span-2 text-right">
+                            <button class="bg-blue-700 text-white px-10 py-4 rounded-2xl font-black text-lg hover:bg-blue-800 transform hover:scale-105 transition-all shadow-xl shadow-blue-700/20 flex items-center gap-3 ml-auto">
+                                Enviar al Buzón <i data-lucide="send" class="w-6 h-6"></i>
+                            </button>
                         </div>
                     </form>
                 </div>
 
-                <h5 class="fw-bold mb-4 text-secondary"><i class="bi bi-collection-play me-2"></i>Portafolio de Innovación</h5>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="card doc-card p-2 border-top border-4 border-warning">
-                            <div class="card-body">
-                                <span class="badge status-propuesto float-end">En Evaluación</span>
-                                <h5 class="card-title fw-bold">Propuestas Q1 - 2026</h5>
-                                <p class="card-text text-muted">Clasificación inicial de iniciativas.</p>
+                <!-- Sección de Tablas de Documentos de Innovación -->
+                <div class="space-y-10">
+                    
+                    <!-- 1. FICHA DE INICIATIVA DE INNOVACIÓN PÚBLICA -->
+                    <div class="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden" data-aos="fade-up">
+                        <div class="bg-slate-900 p-6 flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="file-text" class="w-6 h-6"></i>
                             </div>
+                            <h5 class="text-lg font-bold text-white uppercase tracking-tight">FICHA DE INICIATIVA DE INNOVACIÓN PÚBLICA</h5>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm" data-innov-table="fichas_iniciativa">
+                                <thead class="bg-slate-50 text-slate-500 border-b border-slate-100">
+                                    <tr class="text-[10px] uppercase font-black tracking-widest whitespace-nowrap">
+                                        <th class="p-6">Nº</th>
+                                        <th class="p-6">Nombre Iniciativa</th>
+                                        <th class="p-6">CODIGO</th>
+                                        <th class="p-6">Descripción del Problema</th>
+                                        <th class="p-6">Justificación y alineamiento</th>
+                                        <th class="p-6 text-center">Link (FIIP)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-50">
+                                    <!-- Dynamic content -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
+                    <!-- 2. REPORTE DE EVALUACIÓN SOBRE INICIATIVA PRESENTADA -->
+                    <div class="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden" data-aos="fade-up">
+                        <div class="bg-slate-900 p-6 flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-white uppercase tracking-tight">REPORTE DE EVALUACIÓN SOBRE INICIATIVA PRESENTADA</h5>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm" data-innov-table="reportes_evaluacion">
+                                <thead class="bg-slate-50 text-slate-500 border-b border-slate-100">
+                                    <tr class="text-[10px] uppercase font-black tracking-widest whitespace-nowrap">
+                                        <th class="p-6">Nº</th>
+                                        <th class="p-6">Nombre Iniciativa</th>
+                                        <th class="p-6">CODIGO</th>
+                                        <th class="p-6">Unidades que sesionaron</th>
+                                        <th class="p-6">Opinión técnica y resultado</th>
+                                        <th class="p-6 text-center">Link (FIIP)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-50">
+                                    <!-- Dynamic content -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 3. FICHA DE INNOVACIÓN PÚBLICA -->
+                    <div class="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden" data-aos="fade-up">
+                        <div class="bg-slate-900 p-6 flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-white uppercase tracking-tight">FICHA DE INNOVACIÓN PÚBLICA</h5>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm" data-innov-table="fichas_innovacion">
+                                <thead class="bg-slate-50 text-slate-500 border-b border-slate-100">
+                                    <tr class="text-[10px] uppercase font-black tracking-widest whitespace-nowrap">
+                                        <th class="p-6">Nº</th>
+                                        <th class="p-6">Nombre Iniciativa</th>
+                                        <th class="p-6">CODIGO</th>
+                                        <th class="p-6">Categoría</th>
+                                        <th class="p-6">Resultado Esperado</th>
+                                        <th class="p-6 text-center">Link (FIIP)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-50">
+                                    <!-- Dynamic content -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- ==========================================
-                 4. PUBLICACIONES UPP
-            =========================================== -->
-            <div class="tab-pane fade" id="publicaciones" role="tabpanel" aria-labelledby="publicaciones-tab">
-                <div class="table-container">
-                    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-                        <h4 class="mb-0 fw-bold text-secondary">Artículos e Informes Técnicos</h4>
-                        <div class="search-box">
-                            <i class="bi bi-search"></i>
-                            <input type="text" id="searchInput" class="form-control" placeholder="Buscar publicación..." onkeyup="filterTable()">
+            <div id="publicaciones" class="tab-pane hidden">
+                <div class="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="p-8 border-b border-slate-100 flex flex-wrap justify-between items-center gap-6 bg-slate-50/50">
+                        <div>
+                            <h4 class="text-2xl font-bold text-slate-900">Artículos e Informes Técnicos</h4>
+                            <p class="text-sm text-slate-500 mt-1">Gestión centralizada de documentos de la Unidad de Planeamiento y Presupuesto.</p>
                         </div>
                     </div>
 
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle" id="repoTable">
-                            <thead>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left align-middle" id="repoTable">
+                            <thead class="bg-slate-900 text-white">
                                 <tr>
-                                    <th scope="col" class="rounded-start">Documento</th>
-                                    <th scope="col">Clasificación</th>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col" class="text-center rounded-end">Descargar</th>
+                                    <th class="p-6 font-bold uppercase tracking-widest text-[10px]">Documento</th>
+                                    <th class="p-6 font-bold uppercase tracking-widest text-[10px]">Clasificación</th>
+                                    <th class="p-6 font-bold uppercase tracking-widest text-[10px]">Estado</th>
+                                    <th class="p-6 font-bold uppercase tracking-widest text-[10px] text-center">Acción</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="fw-bold">Nota Técnica N° 002-2025</div>
-                                        <small class="text-muted">Análisis de Ciclo Vital GC</small>
+                            <tbody class="divide-y divide-slate-100">
+                                <!-- 1 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Nota Técnica N° 002-2025</div>
+                                        <div class="text-xs text-slate-500 mt-1 uppercase tracking-tight font-medium">Análisis de Ciclo Vital GC</div>
                                     </td>
-                                    <td><span class="badge bg-light text-dark border">Informe Técnico</span></td>
-                                    <td><span class="badge status-validado">Validado</span></td>
-                                    <td class="text-center"><button class="btn btn-sm btn-download rounded-circle"><i class="bi bi-file-pdf"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="fw-bold">Reporte de Resultados: Autodiagnóstico</div>
-                                        <small class="text-muted">Basal Institucional 2025</small>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">INFORME TÉCNICO</span>
                                     </td>
-                                    <td><span class="badge bg-light text-dark border">Reporte</span></td>
-                                    <td><span class="badge status-publicado">Publicado</span></td>
-                                    <td class="text-center"><button class="btn btn-sm btn-download rounded-circle"><i class="bi bi-file-pdf"></i></button></td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
                                 </tr>
+                                <!-- 2 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Reporte de Resultados: Autodiagnóstico</div>
+                                        <div class="text-xs text-slate-500 mt-1 uppercase tracking-tight font-medium">Basal Institucional 2025</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">REPORTE</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 3 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Informe de Implementación de Gestión por Procesos 2026</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">INFORME TÉCNICO</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 4 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Reporte Trimestral de Simplificación Administrativa</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">REPORTE</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 5 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Boletín Nº 01.</div>
+                                        <div class="text-xs text-slate-500 mt-1 uppercase tracking-tight font-medium">Avances en la Política de Modernización al 2030</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">BOLETÍN</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 6 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Nota Técnica N° 003-2025: Metodología de Costeo de Servicios</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">NOTA TÉCNICA</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 7 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Presentación PPT</div>
+                                        <div class="text-xs text-slate-500 mt-1 uppercase tracking-tight font-medium">Nuevos Lineamientos del SAMGP</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black uppercase">Presentaciones PPT</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 8 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Video Tutorial</div>
+                                        <div class="text-xs text-slate-500 mt-1 uppercase tracking-tight font-medium">Registro en el Aplicativo de Modernización</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black font-black">VIDEO</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="play" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 9 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Informe de Evaluación de Calidad Regulatoria Institucional</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">INFORME TÉCNICO</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 10 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Reporte de Seguimiento de Indicadores de Desempeño</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">REPORTE</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 11 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Boletín de Innovación en Servicios al Ciudadano</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">BOLETÍN</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 12 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Nota Técnica N° 004-2025: Estrategias de Gestión del Cambio</div>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">NOTA TÉCNICA</span>
+                                    </td>
+                                    <td class="p-6">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span>
+                                    </td>
+                                    <td class="p-6 text-center">
+                                        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- 13 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Guía de Usuario: Sistema de Trámite Documentario</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">GUÍA</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 14 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Infografía: Proceso de Innovación Pública</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">INFOGRAFÍA</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 15 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Manual de Identidad Visual AGROIDEAS</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">MANUAL</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 16 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Reporte de Análisis de Datos Agrícolas 2025</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">REPORTE</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 17 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Boletín Digital: Transformación del Estado</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">BOLETÍN</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 18 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Nota Técnica N° 005-2025: IA en el Sector Público</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">NOTA TÉCNICA</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 19 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Plan Estratégico de Modernización 2026-2030</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">PLAN</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 20 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Informe Departamental: Piura</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">INFORME</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 21 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Protocolo de Atención al Ciudadano Digital</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">PROTOCOLO</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 22 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Matriz de Riesgos en Proyectos de Innovación</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">MATRIZ</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 23 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Brochure Institucional: AGROIDEAS</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">BROCHURE</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-black rounded-full uppercase">Publicado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- 24 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-6">
+                                        <div class="font-bold text-slate-900">Informe Especial: Impacto de la Tecnología</div>
+                                    </td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg border border-slate-200 text-[10px] font-black">INFORME</span></td>
+                                    <td class="p-6"><span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-black rounded-full uppercase">Validado</span></td>
+                                    <td class="p-6 text-center"><button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"><i data-lucide="download" class="w-5 h-5"></i></button></td>
+                                </tr>
+                                <!-- Dynamic content -->
                             </tbody>
                         </table>
                     </div>
@@ -714,31 +936,162 @@
         </div>
     </main>
 
-    <!-- Footer Global Dinámico -->
     <footer></footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Inyección de Componentes Compartidos -->
     <script src="js/components.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/content-loader.js"></script>
     
     <script>
-        // Lógica adicional específica para la página (Filtro de Tabla)
-        function filterTable() {
-            let input = document.getElementById("searchInput");
-            let filter = input.value.toUpperCase();
-            let table = document.getElementById("repoTable");
-            let tr = table ? table.getElementsByTagName("tr") : [];
-
-            for (let i = 1; i < tr.length; i++) {
-                let txtValue = tr[i].textContent || tr[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+        // Función expuesta para que content-loader.js la llame después de inyectar datos
+        window.initRepoTable = function() {
+            if ($.fn.DataTable.isDataTable('#repoTable')) {
+                return; // Ya está inicializada
             }
+            
+            $('#repoTable').DataTable({
+                responsive: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'copy',
+                        text: '<i data-lucide="copy" class="w-4 h-4 inline mr-2"></i> Copiar',
+                        className: 'dt-button'
+                    },
+                    {
+                        extend: 'excel',
+                        text: '<i data-lucide="file-spreadsheet" class="w-4 h-4 inline mr-2"></i> Excel',
+                        className: 'dt-button'
+                    },
+                    {
+                        extend: 'pdf',
+                        text: '<i data-lucide="file-text" class="w-4 h-4 inline mr-2"></i> PDF',
+                        className: 'dt-button'
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i data-lucide="printer" class="w-4 h-4 inline mr-2"></i> Imprimir',
+                        className: 'dt-button'
+                    }
+                ],
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Buscar publicación...",
+                    lengthMenu: "Mostrar _MENU_ registros",
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ publicaciones",
+                    infoEmpty: "No hay registros disponibles",
+                    infoFiltered: "(filtrado de _MAX_ registros totales)",
+                    paginate: {
+                        first: "Primero",
+                        last: "Último",
+                        next: "Siguiente",
+                        previous: "Anterior"
+                    }
+                },
+                pageLength: 10,
+                drawCallback: function() {
+                    if(typeof lucide !== 'undefined') lucide.createIcons();
+                }
+            });
+        };
+
+        $(document).ready(function() {
+            // Intentar inicializar por si los datos ya están ahí (o content-loader los pone antes)
+            initRepoTable();
+            
+            // Re-vincular iconos al cargar (this was previously inside the DataTable init, now it's separate)
+            setTimeout(() => {
+                if(typeof lucide !== 'undefined') lucide.createIcons();
+            }, 500);
+        });
+
+        // Inicializar Lucide Icons una vez inyectado el header/footer
+        document.addEventListener('DOMContentLoaded', () => {
+            // Re-inicializar Lucide después de que components.js haga su trabajo
+            setTimeout(() => {
+                if(typeof lucide !== 'undefined') lucide.createIcons();
+            }, 100);
+
+            // TABS SYSTEM
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('data-target');
+
+                    // Update Links
+                    tabLinks.forEach(l => {
+                        l.classList.remove('active', 'text-white');
+                        l.classList.add('text-slate-600');
+                    });
+                    link.classList.add('active');
+                    link.classList.remove('text-slate-600');
+
+                    // Update Panes
+                    tabPanes.forEach(pane => {
+                        pane.classList.add('hidden');
+                        pane.classList.remove('block');
+                        if (pane.id === targetId) {
+                            pane.classList.remove('hidden');
+                            pane.classList.add('block');
+                            // Ajustar columnas de DataTable si se vuelve visible
+                            if(targetId === 'publicaciones') {
+                                $('#repoTable').DataTable().columns.adjust().responsive.recalc();
+                            }
+                        }
+                    });
+
+                    // Refresh AOS to fix animation issues on hidden content
+                    if(typeof AOS !== 'undefined') AOS.refresh();
+                });
+            });
+        });
+
+        // ACCORDION LOGIC
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const isActive = item.classList.contains('active');
+            
+            const parent = document.getElementById('accordion-directivas');
+            const allItems = parent.querySelectorAll('.accordion-item');
+            
+            allItems.forEach(i => {
+                i.classList.remove('active');
+                const content = i.querySelector('.accordion-content');
+                if(content) content.style.maxHeight = '0';
+                const icon = i.querySelector('.chevron-icon');
+                if(icon) icon.classList.remove('rotate-180');
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                const content = item.querySelector('.accordion-content');
+                content.style.maxHeight = content.scrollHeight + "px";
+                const icon = item.querySelector('.chevron-icon');
+                if(icon) icon.classList.add('rotate-180');
+            }
+        }
+
+        // AOS Init
+        if(typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50
+            });
         }
     </script>
 </body>

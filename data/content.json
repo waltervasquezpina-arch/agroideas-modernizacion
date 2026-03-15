@@ -1,0 +1,161 @@
+{
+    "sections": [
+        {
+            "id": "gestion-conocimiento",
+            "title": "Gestión del Conocimiento",
+            "definition": "Es el proceso sistemático e institucionalizado de identificar, capturar, organizar, compartir y aplicar el conocimiento tácito (experiencia) y explícito (documentos) de los servidores públicos, transformándolo en un activo estratégico para la entidad.",
+            "purpose": "Evitar la pérdida del \"saber hacer\" (fuga de capital intelectual) ante la rotación de personal, facilitar la toma de decisiones basada en evidencia, reducir la curva de aprendizaje de los nuevos colaboradores y fomentar una cultura de mejora continua.",
+            "phases": [
+                { "title": "Identificación", "description": "Mapeo del conocimiento crítico necesario para los procesos clave.", "icon": "search" },
+                { "title": "Captura y Creación", "description": "Sistematización de buenas prácticas y lecciones aprendidas.", "icon": "pen-tool" },
+                { "title": "Organización y Almacenamiento", "description": "Creación de repositorios institucionales accesibles.", "icon": "database" },
+                { "title": "Transferencia y Difusión", "description": "Comunidades de práctica, mentorías y capacitaciones internas.", "icon": "share-2" }
+            ],
+            "roles": [
+                { "role": "Alta Dirección", "description": "Patrocina y aprueba las políticas de conocimiento." },
+                { "role": "Comité de Gestión", "description": "Diseña y monitorea la estrategia institucional." },
+                { "role": "Expertos Temáticos", "description": "Generan y validan el conocimiento clave del programa." },
+                { "role": "Servidores Públicos", "description": "Usuarios activos que aplican y retroalimentan el sistema." }
+            ],
+            "video_url": "#",
+            "video_title": "Resumen Ejecutivo: Gestión del Conocimiento"
+        },
+        {
+            "id": "gestion-procesos",
+            "title": "Gestión por Procesos",
+            "definition": "Forma de gestión de la entidad pública que orienta sus procesos a la creación de valor público, para lo cual los organiza en procesos estratégicos, operativos y de soporte.",
+            "purpose": "Mejorar la eficiencia y eficacia de la gestión pública mediante el análisis continuo de las actividades que transforman insumos en resultados.",
+            "phases": [
+                { "title": "Determinación de Procesos", "description": "Identificar los procesos clave de la entidad.", "icon": "map" },
+                { "title": "Seguimiento y Evaluación", "description": "Medición del desempeño de los procesos.", "icon": "activity" },
+                { "title": "Mejora de Procesos", "description": "Optimización constante para generar mayor valor.", "icon": "trending-up" }
+            ],
+            "roles": [
+                { "role": "Dueño del Proceso", "description": "Responsable de la ejecución y mejora del proceso." },
+                { "role": "Equipo Operativo", "description": "Ejecuta las actividades diarias del proceso." }
+            ],
+            "video_url": "#",
+            "video_title": "Tutorial: Gestión por Procesos"
+        },
+        {
+            "id": "gestion-calidad",
+            "title": "Gestión de Calidad",
+            "definition": "Conjunto de acciones planificadas y sistemáticas necesarias para proporcionar la confianza de que un producto o servicio satisfaga las expectativas del ciudadano.",
+            "purpose": "Garantizar que los servicios entregados por AGROIDEAS cumplan con estándares de excelencia y satisfacción ciudadana.",
+            "phases": [
+                { "title": "Planificación", "description": "Establecer objetivos y estándares de calidad.", "icon": "target" },
+                { "title": "Control", "description": "Verificación del cumplimiento de los estándares.", "icon": "check-square" }
+            ],
+            "roles": [
+                { "role": "Auditor Interno", "description": "Verifica el cumplimiento del sistema de gestión." }
+            ],
+            "video_url": "#",
+            "video_title": "Video: Estándares de Calidad"
+        },
+        {
+            "id": "innovacion-publica",
+            "title": "Innovación Pública",
+            "definition": "Proceso iterativo mediante el cual se crean nuevas soluciones a problemas públicos, involucrando a diversos actores para generar valor público.",
+            "purpose": "Modernizar la gestión estatal mediante soluciones creativas, inclusivas y escalables.",
+            "phases": [
+                { "title": "Ideación", "description": "Generación de ideas disruptivas para mejorar el servicio.", "icon": "lightbulb" },
+                { "title": "Prototipado", "description": "Desarrollo de versiones preliminares para prueba.", "icon": "cpu" }
+            ],
+            "roles": [
+                { "role": "Innovadores", "description": "Servidores que proponen y lideran proyectos." }
+            ],
+            "video_url": "#",
+            "video_title": "Inspiración: Innovación en AGROIDEAS"
+        }
+    ],
+    "documents": [
+        {
+            "id": 1,
+            "title": "Herramientas",
+            "subtitle": "Guías y manuales de apoyo",
+            "icon": "wrench",
+            "color": "blue",
+            "links": [
+                { "text": "Manual Autodiagnóstico", "url": "#", "icon": "file-text" },
+                { "text": "Ficha de Lecciones", "url": "#", "icon": "file-signature" }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Comunidades de Práctica",
+            "subtitle": "Actas y agendas de las CoP",
+            "icon": "users-2",
+            "color": "green",
+            "links": [
+                { "text": "Acta de Instalación", "url": "#", "icon": "check-circle", "badge": "Publicado" }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Experiencias",
+            "subtitle": "Buenas prácticas documentadas",
+            "icon": "medal",
+            "color": "amber",
+            "links": []
+        }
+    ],
+    "repository": {
+        "directivas": [
+            {
+                "id": "unidades-direccion",
+                "title": "1. Unidades Funcionales de Dirección",
+                "subsections": [
+                    {
+                        "title": "1.1 Consejo Directivo",
+                        "items": []
+                    },
+                    {
+                        "title": "1.2 Dirección Ejecutiva",
+                        "items": [
+                            { "title": "Directiva Test 1",
+                              "code": "DI N°001-2019-MIDAGRI-AGROIDEAS/DE",
+                              "date": "23/5/2019",
+                              "url": "#" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "unidades-asesoramiento",
+                "title": "2. Unidades Funcionales de Asesoramiento",
+                "subsections": [
+                    {
+                        "title": "2.1 Unidad de Asesoría Jurídica",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2023-MIDAGRI-AGROIDEAS/UAJ", "date": "23/2/2021", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°005-2019-MIDAGRI-AGROIDEAS/UAJ", "date": "15/2/2019", "url": "#" }
+                        ]
+                    },
+                    {
+                        "title": "2.2 Unidad de Planeamiento y Presupuesto",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "innovacion_tablas": {
+            "fichas_iniciativa": [
+                { "id": "01", "name": "Iniciativa de Trazabilidad 4.0", "code": "PIIP-021-2026", "problem": "Mejora en la visibilidad del flujo de datos agrícolas...", "justification": "Fortalecimiento de la cadena de valor digital.", "url": "#" },
+                { "id": "02", "name": "Optimización de Riego Inteligente", "code": "PIIP-034-2026", "problem": "Pérdida de recursos hídricos en zonas áridas.", "justification": "Estrategia de Sostenibilidad MIDAGRI.", "url": "#" }
+            ],
+            "reportes_evaluacion": [
+                { "id": "01", "name": "Iniciativa de Trazabilidad 4.0", "code": "PIIP-021-2026", "units": "UPP, UA, Dirección Ejecutiva", "result": "Aprobado", "url": "#" }
+            ],
+            "fichas_innovacion": [
+                { "id": "01", "name": "Iniciativa de Trazabilidad 4.0", "code": "PIIP-021-2026", "category": "Proyecto Innovación Pública", "expected": "Reducción de tiempos en un 30%...", "url": "#" }
+            ]
+        },
+        "publicaciones_upp": [
+            { "title": "Nota Técnica N° 002-2025", "desc": "Análisis de Ciclo Vital GC", "category": "INFORME TÉCNICO", "status": "Validado", "url": "#" },
+            { "title": "Reporte de Resultados: Autodiagnóstico", "desc": "Basal Institucional 2025", "category": "REPORTE", "status": "Publicado", "url": "#" }
+        ]
+    }
+}

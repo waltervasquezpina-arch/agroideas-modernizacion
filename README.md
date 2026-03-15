@@ -4,59 +4,55 @@ Este proyecto es una aplicación web estática diseñada para difundir e informa
 
 ## 🚀 Características Principales
 
-- **Diseño Responsivo y Limpio:** Interfaz amigable, estructurada principalmente con HTML5 y CSS puro, adaptada para una navegación sencilla.
-- **Reutilización de Componentes (JavaScript):** El proyecto implementa un enfoque de reutilización de código mediante Vanilla JavaScript (`js/main.js`). Componentes críticos y repetitivos como el **Header** (menú de navegación), el **Aside** (barras laterales contextuales) y el **Footer** se inyectan dinámicamente en el DOM, facilitando el mantenimiento y la escalabilidad del proyecto.
-- **Animaciones Interactivas:** Integración de la biblioteca **AOS (Animate on Scroll)** para dotar a las páginas de transiciones fluidas y animaciones atractivas al hacer scroll.
-- **Tipografía Moderna:** Uso de la fuente *Roboto* de Google Fonts para garantizar máxima legibilidad.
+- **Diseño Premium y Moderno:** Interfaz de alto impacto visual utilizando **Tailwind CSS** para un diseño responsivo, limpio y estéticamente agradable.
+- **Arquitectura de Componentes Dinámicos:** Utilización de Vanilla JavaScript (`js/components.js`) para la inyección automática de elementos globales como el **Header** y el **Footer**, asegurando que los cambios realizados en un solo lugar se reflejen en todo el sitio.
+- **Interactividad Enriquecida:** 
+  - **AOS (Animate on Scroll):** Animaciones fluidas al navegar por el contenido.
+  - **Lucide Icons:** Iconografía vectorial moderna y consistente.
+  - **DataTables:** Tablas inteligentes con capacidades de búsqueda, paginación y exportación de datos en la sección de Repositorio.
+- **Tipografía y Estilo Institucional:** Uso de fuentes modernas (Inter/Outfit) y una paleta de colores institucional (Azul Agro, Verde Agro, Rojo PCM) definida mediante variables CSS.
 
 ## 📁 Estructura del Proyecto
 
-El proyecto está compuesto por múltiples secciones que abarcan distintos tópicos de la modernización:
+El proyecto se organiza en torno a los ejes estratégicos de la modernización:
 
-* `index.html`: Página principal que describe el alcance y conceptos generales de la modernización. Contiene las secciones estándar: **1. Definición**, **2. Finalidad**, **3. Implementación** y **4. Roles**.
-* `estructura_organica.html`: Información referente a la estructura, organización y funcionamiento institucional.
-* `gestion_procesos.html`: Directrices para la mejora de productividad y la gestión regulada por procesos.
-* `gestion_calidad.html`: Enfoque hacia la calidad en las regulaciones y servicios brindados al ciudadano.
-* `gestion_conocimiento.html`: Políticas orientadas al rescate, gestión documental y difusión del conocimiento interno.
-* `gestion_innovacion.html`: Estrategias e iniciativas destinadas a fomentar la innovación pública.
-* *Documentos y Repositorio:* (`doc_gestion.html`, `repositorio.html`) donde se listan documentos rectores, boletines, infografías, diapositivas y activos de conocimiento e innovación.
-* `contacto.html`: Formulario de contacto directo para consultas relacionadas a este proceso.
+* `index.html`: Página principal con el resumen de objetivos estratégicos y pilares de transformación.
+* `gestion_conocimiento.html`: Políticas y herramientas para la gestión del capital intelectual.
+* `gestion_procesos.html`: Directrices para la productividad y mejora de procesos institucionales.
+* `gestion_calidad.html`: Enfoque en la calidad de servicios y mejora regulatoria.
+* `gestion_innovacion.html`: Estrategias e iniciativas para el fomento de la innovación pública.
+* `repositorio.html`: Centro de documentación centralizado (Normatividad, Guías, Publicaciones) con tablas interactivas.
+* `estructura_organica.html`: Detalle de la organización funcional y jerárquica de la institución.
+* `doc_gestion.html`: Hub de acceso rápido a documentos de gestión (MOP, MAPRO, etc.).
+* `contacto.html`: Formulario de atención y contacto.
 
-> [!NOTE]
-> Todas las páginas de contenido principal han sido estandarizadas con una estructura de 4 secciones (Definición, Finalidad, Implementación, Roles) y IDs sincronizados para la navegación dinámica.
+> [!IMPORTANT]
+> Todas las páginas de "Ejes de Gestión" han sido estandarizadas en 5 secciones clave: **1. Definición**, **2. Finalidad**, **3. Fases/Actividades**, **4. Roles** y **5. Contenido Multimedia**.
+
+## 📚 Documentación Técnica
+
+Para un análisis profundo del sistema, consulte los siguientes manuales en la carpeta `/document`:
+
+1.  **[Arquitectura Estructural](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/1_Arquitectura_Estructural.md)**: Diseño jerárquico y organización de archivos.
+2.  **[Guía de Estilos UI](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/2_Guia_de_Estilos_UI.md)**: Estándares visuales, colores y componentes.
+3.  **[Manual de Despliegue](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/3_Manual_Despliegue_Mantenimiento.md)**: Guía paso a paso para actualización y mantenimiento.
+4.  **[Arquitectura de Datos y Flujos](file:///d:/AGROIDEAS%20GxP%20-%20Gestion%20Conocimiento/DOCUMENTOS%20DE%20GESTI%C3%93N/8.%20PROPUESTA%20DE%20DESARROLLO%20WEB/Proyecto_repositorio_central%20v%203%20-%20copia%20%283%29/document/4_Arquitectura_Datos_Interaccion.md)**: Detalle del motor dinámico JSON, seguridad y diagramas UML/Mermaid.
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6)
-- **Bibliotecas Externas:** [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)
-- **Fuentes:** [Google Fonts - Roboto](https://fonts.google.com/specimen/Roboto)
+- **Frontend:** HTML5, JavaScript (ES6+), CSS3 (Modern Variables).
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (vía CDN para desarrollo ágil).
+- **Iconografía:** [Lucide Icons](https://lucide.dev/).
+- **Animaciones:** [AOS Library](https://michalsnik.github.io/aos/).
+- **Tablas:** [DataTables.net](https://datatables.net/) (jQuery-based integration).
 
 ## 💻 Instrucciones de Uso y Despliegue
 
-Al ser un sitio web completamente estático, no requiere de una configuración de servidor compleja ni bases de datos para su visualización.
+Al ser un sitio web estático, su despliegue es inmediato y no requiere backend:
 
-1. Clona o descarga el repositorio en tu máquina local.
-2. Navega hasta la carpeta principal del proyecto (donde se encuentra el archivo `index.html`).
-3. Abre el archivo `index.html` haciendo doble clic sobre él, o bien, ábrelo en cualquier navegador web moderno (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, etc.).
+1. Descarga o clona el proyecto en tu entorno local.
+2. Abre cualquier archivo `.html` (se recomienda empezar por `index.html`) en un navegador moderno.
+3. Para realizar cambios globales en la navegación o el pie de página, edita el archivo `js/components.js`.
 
-> **Nota para desarrolladores:** Si deseas modificar el menú principal, los enlaces de interés en la barra lateral o los créditos al pie de página, solo necesitas editar el archivo `js/main.js`. Todos los archivos HTML se actualizarán automáticamente al recargar la página en el navegador.
-
-## 📝 Ejemplo de Reutilización de Código
-
-Esta web utiliza la propiedad `innerHTML` de JavaScript para inyectar componentes, por ejemplo, el pie de página común para todo el sitio:
-
-```javascript
-const footer = document.querySelector("footer");
-
-/* Despliegue del contenido del elemento FOOTER (FECHA DINÁMICA) */
-const fechaActual = new Date();
-const opcionesFecha = { day: 'numeric', month: 'long', year: 'numeric' };
-const fechaFormateada = fechaActual.toLocaleDateString('es-ES', opcionesFecha);
-const anioActual = fechaActual.getFullYear();
-
-footer.innerHTML = \`
-    <p>
-            AGROIDEAS &copy;\${anioActual} Actualizada: \${fechaFormateada}
-    </p>
-\`;
-```
+---
+*Ultima actualización: Marzo 2026 - Modernización AGROIDEAS*

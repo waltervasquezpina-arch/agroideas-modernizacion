@@ -1,56 +1,52 @@
 # Manual de Despliegue y Mantenimiento - Portal AGROIDEAS
 
-## Requisitos Previos al Despliegue
-Este portal (al ser completamente `Estático Front-End`) no exige la instalación de complejas infraestructuras de backend. 
-**No se necesita instalar PHP, NodeJS, Python, MySQL ni ningún runtime de lado de servidor.**
+## Requisitos de Ejecución
+Este portal es una solución **Estática de Siguiente Generación (Serverless Ready)**. No requiere bases de datos relacionales ni lenguajes de procesamiento de lado servidor como PHP o Python.
 
-Las tecnologías nativas implementadas y que todos los navegadores leen intrínsecamente son:
-- **HTML5:** Lenguaje estructural semántico.
-- **CSS3:** Hoja de Estilos (Con Arquitectura BEM).
-- **ES6 (JavaScript Vanilla):** Inyector DOM Dinámico (sin requerimiento de frameworks pesados).
+**Dependencias Externas (Cargadas vía CDN):**
+- Tailwind CSS (Estilos)
+- Lucide Icons (Iconografía)
+- AOS (Animaciones)
+- DataTables (Gestión de Tablas)
 
 ## 1. Despliegue en Entorno de Desarrollo (Local)
-Para revisar, editar o probar la aplicación de manera estrictamente local en la computadora del desarrollador:
+Para realizar modificaciones o previsualizar el sitio de forma local:
 
-1. Proveerse de los ficheros nativos clónicos y almacenarlos en cualquier directorio (e.g. `C:/Proyectos/AGROIDEAS_Portal`).
-2. Abrir el directorio clonado ingresando en la carpeta raíz.
-3. Buscar el archivo **`index.html`** (o cualquier .html adyacente) y ejecutarlo haciendo "Doble Clic" o seleccionando "Abrir Con > [Navegador de Preferencia como Google Chrome]".
-4. Todos los estilos y dependencias interconectan automáticamente por la lógica implícita de `main.js`. 
+1. Clonar o descargar la carpeta raíz del proyecto.
+2. Contar con una conexión a internet activa (necesaria para cargar las bibliotecas vía CDN).
+3. Abrir **`index.html`** en cualquier navegador moderno (preferiblemente Chrome o Edge para herramientas de desarrollador).
+4. No es necesario realizar compilaciones (`npm build`) ya que el proyecto se ejecuta directamente desde el código fuente.
 
-## 2. Despliegue en Producción (Cloud / Servidor Físico)
-Dado su ligereza de ejecución, es escalable en ambientes virtuales en minutos:
+## 2. Despliegue en Producción
+Debido a su naturaleza estática, el portal se puede alojar en cualquier servidor HTTP:
 
-**- En un Servidor On-Premise (Propio de la institución):**
-1. Ingresar o desplegar un gestor HTTP (Apache, NGINX).
-2. Volcar íntegramente toda la carpeta física `pag_web_reutilizable-main-main/` dentro de la carpeta pública del servidor base típicamente instanciada como `/var/www/html` o `/htdocs`.
+*   **Hosting Tradicional (cPanel/Plesk):** Subir el contenido de la carpeta raíz al directorio `public_html`.
+*   **Servidores On-Premise:** Configurar una ruta en Apache o Nginx apuntando a la carpeta del proyecto.
+*   **Plataformas Modernas (GitHub Pages/Vercel/Netlify):** Simplemente subir el código al repositorio y configurar el despliegue automático hacia la rama `main`.
 
-**- En Contenedores Cloud Gratuitos / Serverless (ej. GitHub Pages / Netlify / Vercel):**
-1. Crear un Commit con todos los archivos al repositorio base respectivo ("Branch: Main").
-2. Conectar la instancia Cloud. Dado que no hay compilaciones `package.json`, la mayoría de estos hosts desplegarán e interconectarán el DNS al `index.html` casi instantáneamente usando el Motor estático por defecto.
+## 3. Protocolos de Mantenimiento
 
-## 3. Protocolos de Mantenimiento Específico 
+### Modificación de la Navegación Global
+Para agregar o quitar enlaces en el menú superior o el pie de página, **no se deben editar los archivos HTML individualmente**.
 
-### Alterar Enlaces del Menú Principal
-Para agregar botones o páginas a las pestañas superiores (Modernización GP, NT Modernización, Contacto), **NUNCA** editar una página HTML a la vez.
+1. Abrir el archivo **`js/components.js`**.
+2. Localizar el bloque de código dentro de la función `injectHeader()`.
+3. Modificar la estructura HTML dentro de la cadena de texto (\`...\`).
+4. Al guardar el archivo, los cambios se replicarán automáticamente en todas las páginas que importen este script.
 
-El programador debe abrir directamente `js/main.js` en su IDE, localizar el bloque reservado del `innerHTML` de `<header>`, y dentro, buscar la estructura visual del Menú HTML.
-Si se busca agregar un enlace simple, clonar la siguiente estructura `<li>` como hermana de contacto:
+### Actualización de Secciones en Ejes de Gestión
+Todas las páginas de "Ejes de Gestión" (Conocimiento, Procesos, Calidad, Innovación) deben mantener la estructura de 5 secciones para garantizar el correcto funcionamiento del menú lateral automático:
 
-```html
-<li class="menu__li">
-    <a class="menu__a" href="nueva_pagina.html">Mi Botón Nuevo</a>
-</li>
-```
+| Sección | ID Requerido |
+| :--- | :--- |
+| Definición | `definition` |
+| Finalidad | `purpose` |
+| Fases / Actividades | `phases` |
+| Roles | `roles` |
+| Contenido Multimedia | `multimedia` |
 
-Si se busca expandir el menú desplegable (El dropdown de _NT Modernización_), localizar el `<ul class="submenu__ul">` e insertar adentro el nuevo elemento `<li>`:
-
-```html
-<li class="submenu__li"><a class="submenu__a" href="nueva_gestion.html">Mi Submateria Extra</a></li>
-```
-
-Al igual que el header, el menú de navegación complementario lateral y los hipervínculos del `<aside>` y pie de página inferior (Footer), obedecen la programación inyectable de `main.js`. 
+### Gestión de Datos en el Repositorio
+Para actualizar los registros de las tablas en `repositorio.html`, se debe editar directamente el código HTML de la tabla correspondiente dentro del archivo. Las capacidades de búsqueda y ordenación de **DataTables** se aplicarán automáticamente tras la carga de la página.
 
 > [!TIP]
-> **Nuevas Secciones:** Si se añaden nuevas secciones de contenido, asegúrese de usar los IDs `Definición`, `Finalidad`, `Implementación` y `Roles` para que los enlaces del menú "TOPICOS" (Aside) funcionen automáticamente.
-
-La fecha de copyright se formatea al idioma local y se compila a la hora del localizador por lo que el mantenedor jamás requerirá intervenir el texto.
+> **AOS y Rendimiento:** Si se agregan muchos elementos con animaciones, asegúrese de ajustar el `offset` y `delay` en el HTML (`data-aos-delay="200"`) para evitar que la página pierda fluidez al cargar.

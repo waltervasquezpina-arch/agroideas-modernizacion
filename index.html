@@ -17,8 +17,6 @@
 
     <header></header>
 
-
-
     <main>
         <!-- Hero Section -->
         <section class="hero-gradient relative overflow-hidden py-24 sm:py-32 lg:py-40">
@@ -222,42 +220,10 @@
 
     <footer></footer>
 
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/components.js"></script>
-    <script>
-        // Inicializar Lucide Icons
-        lucide.createIcons();
-
-        // Inicializar AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-
-        // Lógica Menú Móvil
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMobileMenu = document.getElementById('close-mobile-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeMobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-
-        // Cerrar menú al hacer click fuera
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
+    <script src="js/auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,160 @@
+:root {
+    --primary-gob: #C9002B;
+    --secondary-gob: #1E2D3D;
+    --accent-gob: #0072CE;
+    --bg-light: #F4F7F6;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.header-section {
+    background: linear-gradient(135deg, var(--secondary-gob) 0%, #2a3f54 100%);
+    border-bottom: 5px solid var(--primary-gob);
+}
+
+/* Estilos personalizados para estados de tabs */
+.tab-link.active {
+    background-color: var(--primary-gob);
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(201, 0, 43, 0.3);
+    border-color: var(--primary-gob);
+}
+
+.tab-link.active:hover {
+    background-color: white !important;
+    color: var(--primary-gob) !important;
+    border-color: var(--primary-gob);
+    box-shadow: 0 4px 15px rgba(201, 0, 43, 0.1);
+}
+
+.tab-link:not(.active):hover {
+    background-color: #f8fafc;
+    color: var(--primary-gob) !important;
+    border-color: #e2e8f0;
+}
+
+/* Acordeón Transitions */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-item.active .accordion-content {
+    max-height: 2000px; /* Suficiente para el contenido */
+}
+.accordion-item.active .chevron-icon {
+    transform: rotate(180deg);
+}
+
+/* DataTables Custom Styles */
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 2rem;
+    float: right;
+}
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 9999px !important;
+    padding: 0.6rem 1.5rem !important;
+    outline: none !important;
+    font-size: 0.875rem !important;
+    width: 300px !important;
+    margin-left: 1rem !important;
+    background-color: #f8fafc !important;
+}
+.dataTables_wrapper .dt-buttons {
+    margin-bottom: 2rem;
+    float: left;
+    display: flex;
+    gap: 0.75rem;
+}
+.dataTables_wrapper .dt-button {
+    background: white !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 0.85rem !important;
+    color: #475569 !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    padding: 0.6rem 1.2rem !important;
+    transition: all 0.2s !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.025em !important;
+}
+.dataTables_wrapper .dt-button:hover {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #C9002B !important;
+    transform: translateY(-1px);
+}
+.dataTables_wrapper .dataTables_paginate {
+    padding-top: 1.5rem !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 0.75rem !important;
+    border: 1px solid #e2e8f0 !important;
+    margin-left: 0.25rem !important;
+    background: white !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #C9002B !important;
+    color: white !important;
+    border: 1px solid #C9002B !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: white !important;
+}
+.dataTables_wrapper .dataTables_info {
+    font-size: 0.875rem !important;
+    color: #64748b !important;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+.dataTables_wrapper {
+    padding: 1.5rem;
+}
+table.dataTable {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1rem 0 !important;
+}
+table.dataTable thead th {
+    border-bottom: 2px solid #f1f5f9 !important;
+    background-color: #0f172a !important;
+    color: white !important;
+    padding: 1.25rem 1.5rem !important;
+}
+table.dataTable tbody td {
+    padding: 1.25rem 1.5rem !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.doc-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.doc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+.btn-download {
+    background-color: #f8f9fa;
+    color: var(--primary-gob);
+    border: 1px solid #e9ecef;
+    transition: all 0.2s;
+}
+.btn-download:hover {
+    background-color: var(--primary-gob);
+    color: white;
+}

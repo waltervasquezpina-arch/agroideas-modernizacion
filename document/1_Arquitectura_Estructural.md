@@ -1,48 +1,46 @@
 # Arquitectura Estructural del Portal Web AGROIDEAS
 
 ## Resumen Ejecutivo
-El Portal Web de AGROIDEAS es un sitio estático (`Static Site`) de naturaleza hipertextual (HTML/JS/CSS). A diferencia de plataformas monolíticas pesadas o gestores de contenido complejos (CMS), este proyecto se basa en una arquitectura de **Componentes Reutilizables Simulados** mediante *Vanilla JavaScript*.
+El Portal Web de AGROIDEAS es una plataforma estática de alto rendimiento que utiliza un enfoque de **Micro-Componentes Dinámicos**. La arquitectura ha sido refactorizada para separar la lógica de presentación (HTML/Tailwind) de la infraestructura global (Header, Footer, Animaciones) centralizada en JavaScript.
 
-## 1. El Paradigma de Componentes Asíncronos
-Debido a que el proyecto cuenta con **13 páginas** HTML distintas (como `gestion_calidad.html` o `index.html`), se identificó tempranamente el problema de mantenimiento de código repetitivo (Headers, Footers, Navegación lateral). Evitando inyectar lenguajes de servidor (PHP/Node), el proyecto lo soluciona renderizando elementos del DOM dinámicamente con ECMAScript 6.
+## 1. El Paradigma de Componentes Dinámicos
+Para evitar la redundancia de código en las múltiples páginas del sitio, el proyecto utiliza un inyector de DOM inteligente que asegura la consistencia institucional.
 
-### El Corazón Estructural: `js/main.js`
-Todo archivo `.html` en la raíz contiene un cuerpo (body) "vacío" o parcialmente ciego. Su única responsabilidad es ejecutar una llamada mandatoria al bloque inferiror:
-```html
-<script src="js/main.js"></script>
-```
-Una vez ejecutado, el `main.js` de encarga de rellenar las propiedades `innerHTML` del Modelo de Objetos del Documento (DOM):
+### El Motor Central: `js/components.js`
+Este archivo es el cerebro funcional de la interfaz. Su ejecución es obligatoria al final de cada documento HTML para realizar las siguientes tareas:
 
-*   **Bloque `<head>` Dinámico:** El script inyecta asíncronamente las variables UTF-8 complementarias, pre-conexiones de CDNs hacia Google Fonts (*Roboto*), la librería de animaciones al instante (*AOS*) y nuestra propia hoja maestra `css/style.css`.
-*   **Encabezado (`<header>`) y Menú Principal:** Inyecta estructuralmente el logotipo, el banner corporativo y los **3 pilares de navegación jerárquica** (Modernización GP, NT de Modernización con DropDown, y Contacto).
-*   **Barra Lateral (`<aside>`):** Inyecta automáticamente los hipervínculos verticales que refuerzan la navegación de tópicos. Esta navegación depende de que las secciones en el HTML utilicen los IDs estandarizados: `Definición`, `Finalidad`, `Implementación` y `Roles`.
-*   **Pie de Página (`<footer>`):** El cual incrusta un copyright con una variable computada automáticamente contra el reloj del sistema mediante `new Date()` (Haciéndolo "dinámico para siempre").
+*   **Inyección de Header y Footer:** Localiza las etiquetas `<header>` y `<footer>` y las rellena con el menú de navegación institucional y los créditos actualizados, respectivamente.
+*   **Gestión de Navegación Móvil:** Controla la visibilidad del menú hamburguesa y las transiciones en dispositivos táctiles.
+*   **Inicialización de Bibliotecas:** Dispara automáticamente la renderización de **Lucide Icons** y configura la librería de animaciones **AOS** con parámetros optimizados de rendimiento.
+*   **Efectos Scrolled:** Maneja el cambio de opacidad y estilo del Navbar al realizar scroll ("Glassmorphism effect").
 
-## 2. Jerarquía de Carpetas y Organización
+## 2. Jerarquía de Carpetas y Organización Actualizada
 
-La estructura del árbol de directorios obedece al siguiente estándar:
+La estructura del árbol de directorios obedece al siguiente estándar moderno:
 
-\`\`\`text
-/pag_web_reutilizable-main-main/
+```text
+/Proyecto_repositorio_central/
 │
 ├── css/
-│   └── style.css            # Hoja de estilos única, maestra y global.
-│
-├── images/                  # Almacenamiento local de fotografías corporativas.
-│   ├── agroideas_banner.png # Banner generado y utilizado en .logo
-│   └── (...)
+│   ├── modern-styles.css    # Estilos globales, variables y animaciones complejas.
+│   └── repositorio.css      # Estilos específicos para las tablas y tabs del repositorio.
 │
 ├── js/
-│   └── main.js              # Controlador ECMAScript e Inyector de DOM.
+│   ├── components.js       # Core de inyección de componentes y gestión de UI.
+│   └── auth.js             # Lógica para gestión de accesos y seguridad básica.
 │
-├── document/                # Carpeta contenedora de Documentación Técnica.
+├── data/
+│   └── users.json           # Estructura de datos para simulación de usuarios.
 │
-├── README.md                # Presentación general del repositorio en Markdown.
+├── images/                  # Activos gráficos críticos (Logos, Banners).
 │
-└── *.html                   # 13 Páginas web núcleo de contenido asincrónico.
-\`\`\`
+├── document/                # Documentación Técnica (Arquitectura, Estilos, Manual).
+│
+└── *.html                   # Páginas núcleo estandarizadas.
+```
 
-## 3. Beneficios de esta Arquitectura
-1.  **Mantenibilidad Extrema:** Si en el futuro AGROIDEAS modifica su logotipo o requiere agregar un link de navegación, **no se requiere** entrar a alterar 14 archivos HTML. El Desarrollador simplemente edita la variable respectiva dentro de `js/main.js`.
-2.  **Rendimiento y Ligereza:** Al ser un despliegue estático hiper-cacheable (Servido nativamente por cualquier web server como Apache, Nginx o Netlify) carece del *lag* inferido de bases de datos relacionales cruzadas, cargando la experiencia en milisegundos.
-3.  **Seguridad Base:** El código fuente al ser plenamente del lado-cliente y estático (Front-End) es inmune a ataques comunes de inyección por bases de datos (SQLi).
+## 3. Beneficios de la Nueva Arquitectura
+1.  **Mantenibilidad Centralizada:** Cualquier ajuste en el menú de navegación o el pie de página se realiza exclusivamente en `js/components.js`, impactando instantáneamente en todo el portal.
+2.  **Escalabilidad Estética:** Mediante el uso de **Tailwind CSS**, se pueden crear nuevos componentes visuales sin necesidad de escribir CSS personalizado adicional para cada página.
+3.  **Rendimiento "Lazy-Ready":** Los scripts se cargan al final del body para no bloquear el renderizado inicial de la página, proporcionando una experiencia de carga rápida.
+4.  **Estandarización de Secciones:** El uso de IDs unificados (`definition`, `purpose`, `phases`, `roles`, `multimedia`) permite que los scripts de navegación lateral funcionen de manera agnóstica al contenido de la página.
