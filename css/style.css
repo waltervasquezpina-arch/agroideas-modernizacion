@@ -1,0 +1,13 @@
+:root {
+    --color-primary: #0b4b8a;
+    --color-secondary: #e30613;
+    --color-text-main: #1a1a1a;
+    --color-border: #e2e8f0;
+    --radius: 1rem;
+}
+
+/* Estilos base del repositorio legado o previos */
+.contact_form form p { margin-bottom: 2.5rem; }
+.contact_form label { display: block; font-weight: 600; margin-bottom: 0.8rem; color: var(--color-text-main); font-size: 1.4rem; }
+.contact_form input[type="text"], .contact_form input[type="email"], .contact_form textarea { width: 100%; padding: 1.2rem 1.5rem; border: 1px solid var(--color-border); border-radius: 4px; }
+.contact_form button { width: 100%; padding: 1.5rem; background-color: var(--color-secondary); color: white; border: none; border-radius: var(--radius); cursor: pointer; font-weight: bold; }
