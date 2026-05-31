@@ -134,7 +134,82 @@
                             { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
                             { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
                         ]
-                    }
+                    },
+                    {
+                        "title": "2.3 Unidad de Seguimiento y Evaluación",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    }                    
+                ]
+            },
+            {
+                "id": "unidades-linea",
+                "title": "3. Unidades Funcionales de Linea",
+                "subsections": [
+                    {
+                        "title": "3.1 Unidad de Asesoría Jurídica",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2023-MIDAGRI-AGROIDEAS/UAJ", "date": "23/2/2021", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°005-2019-MIDAGRI-AGROIDEAS/UAJ", "date": "15/2/2019", "url": "#" }
+                        ]
+                    },
+                    {
+                        "title": "3.2 Unidad de Planeamiento y Presupuesto",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    },
+                    {
+                        "title": "3.3 Unidad de Seguimiento y Evaluación",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    }                    
+                ]
+            },
+            {
+                "id": "unidades-soporte",
+                "title": "4. Unidades Funcionales de Soporte",
+                "subsections": [
+                    {
+                        "title": "4.1 Unidad de Administración (UA)",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2023-MIDAGRI-AGROIDEAS/UAJ", "date": "23/2/2021", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°005-2019-MIDAGRI-AGROIDEAS/UAJ", "date": "15/2/2019", "url": "#" }
+                        ]
+                    },
+                    {
+                        "title": "4.2 Abastecimineot Y Logística - UA",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    },
+                    {
+                        "title": "4.3 Recursos Humanos - UA",
+                        "items": [
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    }, 
+                    {
+                        "title": "4.4 Tecnología de la Información - UA",
+                        "items": [  
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    }, 
+                    {
+                        "title": "4.5 Gestión de Proyectos - UA",
+                        "items": [  
+                            { "title": "Directiva Test 1", "code": "DI N°003-2020-MIDAGRI-AGROIDEAS/UPP", "date": "23/5/2020", "url": "#" },
+                            { "title": "Directiva Test 2", "code": "DI N°003-2018-MIDAGRI-AGROIDEAS/UPP", "date": "15/4/2018", "url": "#" }
+                        ]
+                    }                    
                 ]
             }
         ],

@@ -36,10 +36,10 @@ Para agregar o quitar enlaces en el menú superior o el pie de página, **no se 
 ### Actualización de Contenidos Dinámicos
 El portal permite la actualización de textos, enlaces y documentos sin tocar el código HTML:
 
-1. **Vía Panel Administrativo:** Acceder a `admin.html` con credenciales institucionales.
-2. **Edición:** Realizar cambios en las secciones de "Ejes de Gestión" o "Repositorio".
-3. **Persistencia:** Al guardar, los cambios se almacenan en el `localStorage` del navegador para previsualización inmediata.
-4. **Sincronización:** Para cambios permanentes en el servidor, exporte el JSON generado y reemplácelo en `data/content.json`.
+1. **Edición del archivo de datos:** Abrir el archivo **`data/content.json`** en un editor de texto.
+2. **Estructura:** Localizar la sección correspondiente (`sections` para textos de los ejes, o `repository` para los documentos del repositorio institucional).
+3. **Modificación:** Actualizar los campos requeridos (título, descripción, código, fecha, url, etc.) o añadir nuevas entradas respetando la estructura JSON.
+4. **Despliegue:** Al guardar y actualizar el archivo `content.json` en el servidor, los cambios se reflejarán inmediatamente en todo el sitio web de forma automática.
 
 ### Gestión de Datos en el Repositorio
 Para actualizar los registros de las tablas en `repositorio.html`, se recomienda utilizar el archivo **`data/content.json`**. El script **`js/content-loader.js`** se encarga de:
